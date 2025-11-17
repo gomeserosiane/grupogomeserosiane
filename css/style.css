@@ -1,0 +1,501 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fefefe;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background: #4f9bff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.container img {
+  width: 100px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #fde71d;
+}
+
+.hero {
+  text-align: center;
+  padding: 140px 20px;
+
+  /* --- IMAGEM DE FUNDO --- */
+  background-image: url('/images/negociacoes.jpg'); /* coloque sua imagem */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: relative;
+  color: white; /* ajusta texto para ficar visível */
+}
+
+/* Overlay opcional para melhorar leitura */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.35);
+  z-index: 0;
+}
+
+/* Mantém seu conteúdo por cima da imagem */
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Seu CSS original */
+.hero .foto {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.hero span {
+  color: #4f9bff;             /* cor interna */
+  -webkit-text-stroke: 1.5px #fff; /* borda branca */
+}
+
+.hero p {
+  font-size: 2rem;
+  font-weight: bold;
+  max-width: 600px;
+  margin: 0 auto 30px;
+  color: #f1f1f1; /* melhor para texto claro */
+}
+
+.social-links a {
+  display: inline-block;
+  margin: 0 10px;
+  padding-top: 50px;
+  color: #0077ff;
+  font-weight: 500;
+  text-decoration: none;
+  transition: transform 0.3s;
+}
+
+.social-links a:hover {
+  text-decoration: underline;
+  transform: translateY(-5px);
+}
+
+.social-links img {
+    width: 60px;
+}
+
+.sobre, .servicos {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/****** SEÇÃO SOBRE ******/
+.sobre h2, .servicos h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Só o primeiro parágrafo recebe padding */
+.sobre p.primeira-linha {
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 0 110px;
+  margin-bottom: 1em;
+}
+
+.sobre-conteudo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 0 80px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.sobre-conteudo p {
+    flex: 1;              /* Ocupa todo o espaço disponível */
+    min-width: 0;         /* Impede expansão infinita que empurra a imagem */
+    text-align: justify;
+    padding: 0;
+    font-size: 1.2rem;
+}
+
+.sobre-conteudo img {
+    width: 280px;
+    text-align: center;
+    height: auto;
+    flex-shrink: 0;       /* Impede a imagem de ser empurrada */
+    display: block;
+}
+
+/***** SEÇÃO SERVIÇOS *****/
+.servicos {
+    padding: 50px 20px;
+    background: #f3f3f3;
+}
+
+.servicos .grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.servicos h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+}
+
+.card {
+  position: relative;
+  flex: 0 0 35%;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.card-front img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #ccc; /* borda separando imagem do conteúdo */
+}
+
+.card-content {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* espaço entre descrição e botões */
+  min-height: 120px;
+}
+
+.card-content h2 {
+  font-size: 1.5rem;
+}
+
+.card-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding: 0 30px;
+}
+
+.btn-info {
+  background-color: #888;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn-whats {
+  background-color: #25D366;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+}
+
+.btn-whats:hover {
+  color: #000;
+  background-color: #25D366;
+}
+
+.whatsapp-icon {
+  font-size: 16px;
+}
+
+.whatsapp-icon img {
+  width: 30px;
+  height: 30px;
+}
+
+/* Card back (detalhes) */
+.card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #888;
+
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+
+  padding: 15px;
+  box-sizing: border-box;
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: 0.3s;
+}
+
+.btn-close {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  font-size: 40px;
+  color: red;
+  cursor: pointer;
+}
+
+
+/* ===== Formulário ===== */
+.contato {
+  background: #f8f9fa;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contato h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.contato p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.campo {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus, textarea:focus {
+  border-color: #0077ff;
+  box-shadow: 0 0 4px rgba(0, 119, 255, 0.3);
+  outline: none;
+}
+
+/* Campos com erro */
+input.error, textarea.error {
+  border-color: #ff4d4d;
+  animation: shake 0.3s;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+
+/* Botão */
+.btn-enviar {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  border: none;
+  background: #0077ff;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.1s;
+}
+
+.btn-enviar:hover {
+  background: #25D366;
+}
+
+.btn-enviar:active {
+  transform: scale(0.97);
+}
+
+/* Animação de carregamento */
+.btn-enviar.loading {
+  position: relative;
+  pointer-events: none;
+  background: #00ff6a;
+}
+
+.btn-enviar.loading::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px;
+  border: 3px solid #fff;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/*
+footer {
+  background: #f3f3f3;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+}*/
+
+footer {
+  background: #f3f3f3;
+  color: #555;
+  padding: 40px 20px 20px;
+}
+
+.rodape {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 120px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  width: 90%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.rodape h3 {
+  color: #222;
+  margin-bottom: 10px;
+  font-size: 1.6rem;
+}
+
+.rodape p {
+  font-size: 1rem;
+}
+
+.rodape ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: start;
+}
+
+.rodape a {
+  color: #555;
+  text-decoration: none;
+  list-style: none;
+  font-size: 1rem;
+}
+
+.rodape a:hover {
+  color: #4f9bff;
+}
+
+.copy {
+  text-align: center;
+  font-size: 14px;
+  padding: 10px;
+  border-top: 1px solid #9b9b9b;
+}
+
+.copy span {
+  cursor: pointer;
+  text-decoration: none;
+  list-style: none;
+}
+
+.copy span:hover {
+  color: #4f9bff;
+}

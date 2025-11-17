@@ -314,6 +314,26 @@ nav a:hover {
   cursor: pointer;
 }
 
+.card-back .btn-whats {
+  display: inline-flex;           /* permite centralizar o conteúdo do botão */
+  justify-content: center;        /* centraliza horizontalmente */
+  align-items: center;            /* centraliza verticalmente */
+  gap: 4px;                       /* espaçamento entre texto e ícone */
+  padding: 6px 12px;              /* deixa o botão menor */
+  font-size: 0.85rem;             /* reduz o tamanho do texto */
+  border-radius: 6px;             /* bordas levemente arredondadas */
+  background-color: #25d366;      /* verde WhatsApp */
+  color: #fff;                    /* texto branco */
+  text-decoration: none;          /* remove underline */
+  margin: 10px auto 0;            /* centraliza o botão dentro do card */
+  display: block;                 /* garante centralização com margin auto */
+  transition: background 0.3s;
+}
+
+.card-back .btn-whats:hover {
+  color: #000;      /* efeito hover */
+}
+
 
 /* ===== Formulário ===== */
 .contato {

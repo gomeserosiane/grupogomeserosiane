@@ -43,9 +43,9 @@ document.getElementById("whatsappForm").addEventListener("submit", function(e) {
   botao.textContent = "";
 
   // Substitua pelo número real do WhatsApp (somente números, ex: 5581999999999)
-  const numeroEmpresa = "SEUNUMEROAQUI";
+  const numeroEmpresa = "5591999635260";
 
-  const mensagem = `*Formulário de Contato - Gomes e Rosiane*%0A
+  const mensagem = `*Formulário de Contato - Grupo Gomes & Rosiane*%0A
 *Nome completo:* ${nome.value}%0A
 *E-mail:* ${email.value}%0A
 *WhatsApp:* ${whatsapp.value}%0A
@@ -82,3 +82,9 @@ document.querySelectorAll('.card').forEach(card => {
     cardBack.style.display = 'none';
   });
 });
+
+function abrirPDFs() {
+    // Substitua pelos links corretos dos seus PDFs
+    window.open('src/Cartao-Help-24h-ok.pdf', '_blank');
+    window.open('src/HELP 5.0 CORP 2 A 30 VDS – Luck Card.pdf', '_blank');
+  }

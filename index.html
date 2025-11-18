@@ -266,6 +266,22 @@
           </div>
         </div>
 
+        <div id="slider-overlay">
+          <div class="slider-content">
+
+            <!-- Botão de fechar -->
+            <button class="slider-close">×</button>
+
+            <!-- Setas -->
+            <div class="slider-arrow left">&#10094;</div>
+            <div class="slider-arrow right">&#10095;</div>
+
+            <!-- Imagens do slider -->
+            <img id="slider-image" src="images/banner - help.png" alt="Imagem do plano">
+
+          </div>
+        </div>
+
         <div class="card">
           <div class="card-front">
             <img src="/images/otica.jpg" alt="Serviço 8 - Ótica">
@@ -352,7 +368,9 @@
     </section>
 
     <section class="outros-servicos">
-      <h2>Conheça nossos outros serviços</h2>
+      <h2>Conheça mais sobre nossos planos de saúde</h2>
+
+      <!--
       <div class="card-servico">
         <img src="images/Banner - plano de saude.jpeg" alt="Banner - Associado Luck Card" />
 
@@ -368,10 +386,10 @@
             Entre em contato <span class="whatsapp-icon-outros"><img src="/images/icons8-whatsapp-96.png" alt=""></span>
           </a>
         </div>
-      </div>
+      </div>-->
 
       <div class="card-servico">
-        <img src="images/BANNER  HELP 3.00 SINDMAPA 1,43 m x 1,56 m (1) - Copia_page-0001.jpg" alt="Banner - Associado Luck Card" />
+        <img src="images/banner - help.png" alt="Banner - Associado Luck Card" />
 
         <h3>Associado Luck Card</h3>
 
@@ -382,7 +400,7 @@
 
         <div class="botoes-card">
           <!-- Botão PDF -->
-          <button class="btn-info-outros" onclick="abrirPDFs()">
+          <button class="btn-info-outros" onclick="abrirSliderLuckCard()">
             Mais informações
           </button>
 
@@ -391,6 +409,37 @@
             Entre em contato <span class="whatsapp-icon-outros"><img src="/images/icons8-whatsapp-96.png" alt=""></span>
           </a>
         </div>
+      </div>
+
+      <!-- Slider Overlay -->
+      <div id="slider-overlay-luck">
+          <span class="slider-close-luck">&times;</span>
+          <img id="slider-image-luck" src=""/>
+          <span class="slider-arrow-luck left">&#10094;</span>
+          <span class="slider-arrow-luck right">&#10095;</span>
+      </div>
+
+
+      <div class="card-servico">
+        <img src="images/banner 1 - select.jpeg" alt="Imagem de capa do vídeo" />
+
+        <h3>Plano de saúde Select</h3>
+
+        <p>
+            Assista ao nosso vídeo explicativo logo abaixo para entender todos os detalhes 
+            e benefícios deste plano imperdível.
+        </p>
+        
+        <div class="video-container">
+            <iframe 
+                src="src/video - select plano de saude.mp4" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+          <a href="https://wa.me/5591999635260" target="_blank" class="btn-whats-outros" style="margin-top: 20px;">
+            Entre em contato <span class="whatsapp-icon-outros"><img src="/images/icons8-whatsapp-96.png" alt=""></span>
+          </a>
       </div>
 
     </section>

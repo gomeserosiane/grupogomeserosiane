@@ -83,8 +83,70 @@ document.querySelectorAll('.card').forEach(card => {
   });
 });
 
-function abrirPDFs() {
-    // Substitua pelos links corretos dos seus PDFs
-    window.open('src/Cartao-Help-24h-ok.pdf', '_blank');
-    window.open('src/HELP 5.0 CORP 2 A 30 VDS – Luck Card.pdf', '_blank');
-  }
+// Lista de imagens do slider
+  const sliderImages = [
+    "images/Banner - plano de saude.jpeg",
+    "images/banner - help.png",
+    "images/banner 2 - select.jpeg"
+  ];
+
+  let currentSlide = 0;
+
+  const sliderOverlay = document.getElementById("slider-overlay");
+  const sliderImg = document.getElementById("slider-image");
+
+  // Abre o slider quando clicar em "Mais Informações" do card 7
+  document.querySelectorAll(".card")[6]
+    .querySelector(".btn-info")
+    .addEventListener("click", () => {
+      sliderOverlay.style.display = "flex";
+      currentSlide = 0;
+      sliderImg.src = sliderImages[currentSlide];
+    });
+
+  // Fechar slider
+  document.querySelector(".slider-close").onclick = () => {
+    sliderOverlay.style.display = "none";
+  };
+
+  // Setas para navegação
+  document.querySelector(".slider-arrow.left").onclick = () => {
+    currentSlide = (currentSlide - 1 + sliderImages.length) % sliderImages.length;
+    sliderImg.src = sliderImages[currentSlide];
+  };
+
+  document.querySelector(".slider-arrow.right").onclick = () => {
+    currentSlide = (currentSlide + 1) % sliderImages.length;
+    sliderImg.src = sliderImages[currentSlide];
+  };
+
+  function abrirSliderLuckCard() {
+    const sliderImagesLuck = [
+        "images/banner - help.png",
+        "images/banner - help2.png",
+        "images/banner - help3.png"
+    ];
+
+    let currentSlideLuck = 0;
+    const sliderOverlayLuck = document.getElementById("slider-overlay-luck");
+    const sliderImgLuck = document.getElementById("slider-image-luck");
+
+    sliderOverlayLuck.style.display = "flex";
+    sliderImgLuck.src = sliderImagesLuck[currentSlideLuck];
+
+    // Fechar slider
+    document.querySelector(".slider-close-luck").onclick = () => {
+        sliderOverlayLuck.style.display = "none";
+    };
+
+    // Setas
+    document.querySelector(".slider-arrow-luck.left").onclick = () => {
+        currentSlideLuck = (currentSlideLuck - 1 + sliderImagesLuck.length) % sliderImagesLuck.length;
+        sliderImgLuck.src = sliderImagesLuck[currentSlideLuck];
+    };
+
+    document.querySelector(".slider-arrow-luck.right").onclick = () => {
+        currentSlideLuck = (currentSlideLuck + 1) % sliderImagesLuck.length;
+        sliderImgLuck.src = sliderImagesLuck[currentSlideLuck];
+    };
+}

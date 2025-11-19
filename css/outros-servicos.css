@@ -1,0 +1,193 @@
+
+.outros-servicos {
+  background: #4f9bff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.outros-servicos h2 {
+  font-size: 2rem;
+  color: #fff;
+  font-weight: bold;
+}
+
+.card-servico {
+  max-width: 600px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.card-servico img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.card-servico h3 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #000;
+}
+
+.botoes-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Ambos os botões com o mesmo tamanho */
+.btn-info-outros {
+  flex: 1; /* Faz ambos ocuparem exatamente o mesmo espaço */
+  padding: 13.5px 0;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+
+  display: flex;               /* Garantir alinhamento interno */
+  justify-content: center;     /* Centraliza texto + ícone */
+  align-items: center;
+  gap: 10px;                   /* Espaço entre texto e ícone */
+}
+
+/* Botão PDF */
+.btn-info-outros {
+  background: #888;
+}
+
+.btn-info-outros:hover {
+  background: #4f9bff;
+}
+
+/* Botão WhatsApp */
+.btn-whats-outros {
+  background: #25d366;
+  flex: 1;
+  padding: 14px 0;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+
+  display: flex;                /* ALINHAMENTO PERFEITO */
+  justify-content: center;
+  align-items: center;          /* <- CENTRALIZA VERTICALMENTE */
+  gap: 10px;
+  
+  line-height: 1;               /* <- IMPEDIR DIFERENÇA ENTRE TEXTO E ÍCONE */
+}
+
+.btn-whats-outros:hover {
+  background: #1ebe5a;
+}
+
+/* Garantir que o ícone não tenha espaçamento próprio */
+.whatsapp-icon-outros img {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  vertical-align: middle;       /* <- AJUDA NO ALINHAMENTO */
+  margin: 0;                    /* Garantir zero margem */
+  padding: 0;
+}
+
+.video-container {
+    /* Define o contêiner do vídeo para posicionamento absoluto do iframe */
+    position: relative;
+    width: 100%;
+    /* Truque para manter a proporção 16:9 (9 / 16 * 100) */
+    padding-bottom: 56.25%; 
+    height: 0;
+    overflow: hidden;
+    margin-top: 20px; /* Espaçamento entre o parágrafo e o vídeo */
+}
+
+.video-container iframe {
+    /* O iframe cobre o contêiner inteiro */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 8px; /* Opcional: bordas arredondadas no vídeo */
+}
+
+/* ---------- SLIDER OVERLAY LUCK CARD ---------- */
+
+#slider-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* opaco 50% */
+  backdrop-filter: blur(2px);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-content {
+  position: relative;
+  width: 80%;
+  max-width: 700px;
+}
+
+#slider-image {
+  width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #000;
+}
+
+/* FECHAR */
+.slider-close {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: #ff0000;
+  color: white;
+  border: none;
+  font-size: 35px;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+}
+
+/* SETAS */
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 45px;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  padding: 8px;
+}
+
+.slider-arrow.left {
+  left: -50px;
+}
+
+.slider-arrow.right {
+  right: -50px;
+}
+
+.slider-arrow:hover {
+  color: #00aaff;
+}

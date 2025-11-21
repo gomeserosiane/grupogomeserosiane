@@ -1,16 +1,16 @@
 // Array com imagens de cada card
 const cardImages = [
   ["images-slider/slider-consultas-medicas.png"], // Card 0
-  [""], // Card 1
+  ["images-slider/slider-planosfunerarios.png"], // Card 1
   ["images-slider/slider-seguro-automotivo.png", "images-slider/slider-seguro-de-vida.png", 
     "images-slider/slider-seguro-residencial.png"], // Card 2
-  ["images-banner/certificado.jpg"], // Card 3
-  ["images-banner/mototaxi.jpg", "images-banner/mototaxi2.jpg"], // Card 4
-  ["images-banner/imoveis.jpg"], // Card 5
-  ["images-banner/planos de saude e odonto.jpg"], // Card 6
-  ["images-banner/otica.jpg"], // Card 7
-  ["images-banner/contabilidade.jpg"], // Card 8
-  ["images-banner/documentos.jpg"] // Card 9
+  ["images-slider/slider-certificados.png"], // Card 3
+  ["images-slider/slider-servicosdemobildade.png"], // Card 4
+  ["images-slider/slider-imoveis.png"], // Card 5
+  ["images-slider/slider-planodesaude.png", "images-slider/slider-planoodonto.png"], // Card 6
+  ["images-slider/slider-otica.png"], // Card 7
+  ["images-slider/slider-contabilidade.png"], // Card 8
+  ["images-slider/slider-documentos.png"] // Card 9
 ];
 
 const modal = document.getElementById('sliderModal');

@@ -1,6 +1,8 @@
 // Array com imagens de cada card
 const cardImages = [
-  ["images-slider/slider-consultas-medicas.png"], // Card 0
+  ["images-slider/slider-consultas-medicas1.png", "images-slider/slider-consultas-medicas2.png",
+    "images-slider/slider-consultas-medicas3.png", "images-slider/slider-consultas-medicas4.png",
+    "images-slider/slider-consultas-medicas5.png"], // Card 0
   ["images-slider/slider-planosfunerarios.png"], // Card 1
   ["images-slider/slider-seguro-automotivo.png", "images-slider/slider-seguro-de-vida.png", 
     "images-slider/slider-seguro-residencial.png"], // Card 2

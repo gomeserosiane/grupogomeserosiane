@@ -1,0 +1,254 @@
+@media (max-width: 768px) {
+
+  /***** SEÇÃO HEADER *****/
+  .container img {
+    width: 70px;
+  }
+
+  .logo {
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.2;
+    padding-right: 30px;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .desktop-menu {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .container img {
+    width: 80px;
+  }
+
+  .logo {
+    font-size: 1rem;
+    padding-left: 10px;
+  }
+
+  /* botão X dentro do menu mobile */
+  .close-menu {
+    position: absolute;
+    top: 20px;
+    right: 240px;
+    /* antes era right, agora esquerda */
+    background: none;
+    border: none;
+    color: red;
+    font-size: 26px;
+    cursor: pointer;
+  }
+
+  /* espaço entre o X e os links */
+  #mobile-menu ul {
+    margin-top: 70px;
+    /* aumenta o espaço para o X */
+  }
+
+  /***** SEÇÃO HERO *****/
+  .hero {
+    padding: 80px 20px;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .social-links img {
+    width: 45px;
+  }
+
+  .cards-container {
+    grid-template-columns: 1fr !important;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .card-buttons .btn {
+    font-size: 15px;
+    padding: 12px;
+  }
+
+  .card-buttons .btn-whats .whatsapp-icon img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .video-container iframe {
+    width: 100%;
+    height: 260px;
+  }
+
+  /***** SEÇÃO SOBRE *****/
+
+  .sobre p.primeira-linha {
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .sobre-conteudo {
+    flex-direction: column;
+    padding: 0 20px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .sobre-conteudo p {
+    text-align: left;
+    font-size: 1.1rem;
+    padding: 0;
+  }
+
+  .sobre-conteudo img {
+    width: 180px;
+    margin-top: 20px;
+  }
+
+  /***** SEÇÃO SERVIÇOS *****/
+
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .card {
+    flex: 0 0 100%;
+    max-width: 90%;
+  }
+
+  .card-front img {
+    height: 180px;
+  }
+
+  /* --- BOTÕES DO MESMO TAMANHO --- */
+  .card-buttons {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+  }
+
+  .card-buttons .btn-info,
+  .card-buttons .btn-whats {
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    font-size: 1rem;
+
+    align-items: center;
+    justify-content: center;
+  }
+
+  .whatsapp-icon img {
+    width: 20px;
+    height: 20px;
+  }
+
+  /***** SEÇÃO SERVIÇOS (SLIDER) *****/
+
+  .slider-content {
+    max-width: 95%;
+    max-height: 70%;
+    padding: 10px;
+  }
+
+  .slider-images img {
+    max-width: 100%;
+    max-height: 60vh;
+  }
+
+  .close-btn {
+    top: 80px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    font-size: 28px;
+    border-width: 1.5px;
+  }
+
+  .arrow {
+    padding: 10px;
+    font-size: 26px;
+    top: auto;
+    bottom: 40px;
+    transform: none;
+  }
+
+  .left-arrow {
+    left: 20px;
+  }
+
+  .right-arrow {
+    right: 20px;
+  }
+
+  /***** SEÇÃO OUTROS-SERVIÇOS *****/
+
+  .card-servico {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .card-servico h3 {
+    font-size: 1.3rem;
+  }
+
+  .botoes-card {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn-info-outros,
+  .btn-whats-outros {
+    width: 100%;
+    flex: unset;
+  }
+
+  .close-btn-outros {
+    top: 180px;
+    right: 40px;
+  }
+
+  .arrow {
+    padding: 10px;
+    font-size: 26px;
+    top: auto;
+    bottom: 40px;
+    transform: none;
+  }
+
+  .left-arrow-outros {
+    top: 500px;
+    bottom: 150px;
+    left: 20px;
+  }
+
+  .right-arrow-outros {
+    top: 500px;
+    bottom: 150px;
+    right: 20px;
+  }
+
+
+  /***** SEÇÃO FOOTER *****/
+  .rodape {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+}

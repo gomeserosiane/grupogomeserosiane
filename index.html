@@ -53,6 +53,7 @@
   <link rel="stylesheet" href="css/servicos.css">
   <link rel="stylesheet" href="css/outros-servicos.css">
   <link rel="stylesheet" href="css/contato.css">
+  <link rel="stylesheet" href="css/responsivo.css">
 </head>
 
 <body>
@@ -60,7 +61,21 @@
     <div class="container">
       <img src="images-banner/logo - grupo gomes e rosiane.png" alt="Logotipo Gomes & Rosiane">
       <h1 class="logo">Grupo Gomes & Rosiane | Soluções em negócios</h1>
-      <nav>
+
+      <nav class="desktop-menu">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+
+      <button class="menu-toggle" id="menu-toggle">☰</button>
+
+      <nav id="mobile-menu">
+        <button class="close-menu" id="close-menu">✖</button>
+        
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#sobre">Sobre</a></li>
@@ -86,9 +101,9 @@
 
   <section id="sobre" class="sobre">
     <h2>Sobre nós</h2>
-    <p class="primeira-linha">
-      Com sede em Belém/PA, possuímos 10 anos de mercado, e trabalhamos nos ramos de: <br><br>
-    </p>
+      <p class="primeira-linha">
+        Com sede em Belém/PA, possuímos 10 anos de mercado, e trabalhamos nos ramos de: <br><br>
+      </p>
     <div class="sobre-conteudo">
       <p>
         1 - Consultas Médicas (Clínico geral, Ginecologista, Oftalmologia e Pediatria). <br>
@@ -421,6 +436,7 @@
   <script src="js/slider-servicos.js"></script>
   <script src="js/formulario-contato.js"></script>
   <script src="js/slider-outros-servicos.js"></script>
+  <script src="js/menu-mobile.js"></script>
 </body>
 
 </html>

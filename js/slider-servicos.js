@@ -4,7 +4,7 @@ const cardImages = [
     "images-slider/slider-consultas-medicas3.png", "images-slider/slider-consultas-medicas4.png",
     "images-slider/slider-consultas-medicas5.png"], // Card 0
   ["images-slider/slider-planosfunerarios.png"], // Card 1
-  ["images-slider/slider-seguro-automotivo.png", "images-slider/slider-seguro-de-vida.png", 
+  ["images-slider/slider-seguro-automotivo.png", "images-slider/slider-seguro-de-vida.png",
     "images-slider/slider-seguro-residencial.png"], // Card 2
   ["images-slider/slider-certificados.png"], // Card 3
   ["images-slider/slider-servicosdemobildade.png"], // Card 4
@@ -42,6 +42,43 @@ closeBtn.addEventListener('click', () => {
 
 // Mostrar imagens do card
 function showImages(cardIndex) {
+  
+  // --- Suporte a Swipe no Mobile (Função de scroll - para passar as imagens tocando na tela) ---
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  function handleGesture() {
+    const images = cardImages[currentCardIndex];
+
+    // Distância mínima do swipe para considerar gesto
+    const swipeThreshold = 50;
+
+    if (touchEndX + swipeThreshold < touchStartX) {
+      // Swipe Esquerda → Próxima imagem
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+      showImages(currentCardIndex);
+    }
+
+    if (touchEndX > touchStartX + swipeThreshold) {
+      // Swipe Direita → Imagem anterior
+      currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+      showImages(currentCardIndex);
+    }
+  }
+
+  // Eventos de toque no container das imagens
+  sliderImagesContainer.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  });
+
+  sliderImagesContainer.addEventListener('touchmove', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+  });
+
+  sliderImagesContainer.addEventListener('touchend', () => {
+    handleGesture();
+  });
+
   sliderImagesContainer.innerHTML = '';
   const images = cardImages[cardIndex];
 

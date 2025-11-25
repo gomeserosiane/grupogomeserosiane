@@ -2,17 +2,28 @@
 const cardImages = [
   ["images-slider/slider-consultas-medicas1.png", "images-slider/slider-consultas-medicas2.png",
     "images-slider/slider-consultas-medicas3.png", "images-slider/slider-consultas-medicas4.png",
-    "images-slider/slider-consultas-medicas5.png"], // Card 0
-  ["images-slider/slider-planosfunerarios.png"], // Card 1
-  ["images-slider/slider-seguro-automotivo.png", "images-slider/slider-seguro-de-vida.png",
-    "images-slider/slider-seguro-residencial.png"], // Card 2
-  ["images-slider/slider-certificados.png"], // Card 3
-  ["images-slider/slider-servicosdemobildade.png"], // Card 4
-  ["images-slider/slider-imoveis.png"], // Card 5
-  ["images-slider/slider-planodesaude.png", "images-slider/slider-planoodonto.png"], // Card 6
-  ["images-slider/slider-otica.png"], // Card 7
-  ["images-slider/slider-contabilidade.png"], // Card 8
-  ["images-slider/slider-documentos.png"] // Card 9
+    "images-slider/slider-consultas-medicas5.png"], // Card 0 (Consultas médicas)
+
+  ["images-slider/slider-funeraria1.png", "images-slider/slider-funeraria2.png", 
+    "images-slider/slider-funeraria3.png", "images-slider/slider-funeraria4.png"], // Card 1 (Funerária)
+
+  ["images-slider/slider-seguros1.png", "images-slider/slider-seguros2.png",
+    "images-slider/slider-seguros3.png", "images-slider/slider-seguros4.png",
+    "images-slider/slider-seguros5.png"], // Card 2 (Seguros)
+
+  ["images-slider/slider-certificados.png"], // Card 3 (Certificados)
+
+  ["images-slider/slider-servicosdemobildade.png"], // Card 4 (Serviços de mobilidade)
+
+  ["images-slider/slider-imoveis.png"], // Card 5 (Imóveis)
+
+  ["images-slider/slider-planodesaude.png", "images-slider/slider-planoodonto.png"], // Card 6 (Planos de saude e odonto)
+
+  ["images-slider/slider-otica.png"], // Card 7 (Ótica)
+
+  ["images-slider/slider-contabilidade.png"], // Card 8 (Contabilidade)
+
+  ["images-slider/slider-documentos.png"] // Card 9 (Documentação)
 ];
 
 const modal = document.getElementById('sliderModal');

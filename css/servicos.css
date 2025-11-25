@@ -133,7 +133,7 @@
   justify-content: center;
   position: absolute;
   top: 80px;
-  right: 240px;
+  right: 220px;
 
   background: rgba(255, 0, 0, 0.808);
   color: white;
@@ -174,5 +174,5 @@
   background-color: #4f9bff;
 }
 
-.left-arrow { left: 250px; }
-.right-arrow { right: 250px; }
+.left-arrow { left: 220px; }
+.right-arrow { right: 220px; }

@@ -55,13 +55,12 @@
   font-weight: bold;
   max-width: 600px;
   margin: 0 auto 30px;
-  color: #f1f1f1; /* melhor para texto claro */
+  color: #fff; /* melhor para texto claro */
 }
 
 .social-links a {
   display: inline-block;
-  margin: 0 10px;
-  padding-top: 50px;
+  margin: 50px 30px;
   color: #0077ff;
   font-weight: 500;
   text-decoration: none;

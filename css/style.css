@@ -16,6 +16,11 @@ body {
   line-height: 1.6;
 }
 
+.no-scroll {
+  overflow: hidden !important;
+  height: 100vh;
+}
+
 /*
 footer {
   background: #f3f3f3;
@@ -85,4 +90,32 @@ footer {
 
 .copy span:hover {
   color: #4f9bff;
+}
+
+.whatsapp-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1;
+}
+
+.whatsapp-container a {
+    background-color: #25d366;
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.whatsapp-container img {
+    width: 45px;
+    height: 45px;
+}
+
+.whatsapp-container a:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
 }

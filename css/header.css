@@ -62,7 +62,7 @@ header {
   top: 0;
   right: -300px; /* escondido */
   width: 280px;
-  height: 100vh;
+  height: 100%;
   background: #4f9bff;
   padding: 30px 20px;
   box-shadow: -3px 0 10px rgba(0,0,0,0.3);
@@ -83,6 +83,17 @@ header {
   color: #fff;
   text-decoration: none;
   font-size: 1.2rem;
+}
+
+#mobile-menu img {
+  width: 250px;
+  margin: 100px 0 50px;
+}
+
+#mobile-menu p {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #fff;
 }
 
 .close-menu {

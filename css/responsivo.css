@@ -54,6 +54,17 @@
     /* aumenta o espaço para o X */
   }
 
+  #mobile-menu img {
+    width: 250px;
+    margin: 100px 0 50px;
+  }
+
+  #mobile-menu p {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #fff;
+  }
+
   /***** SEÇÃO HERO *****/
   .hero {
     padding: 80px 20px;
@@ -116,9 +127,12 @@
   }
 
   .sobre-conteudo img {
-    width: 280px;
-    margin-top: 20px;
-  }
+    width: 350px;
+    text-align: center;
+    height: auto;
+    flex-shrink: 0;       /* Impede a imagem de ser empurrada */
+    display: block;
+}
 
   /***** SEÇÃO SERVIÇOS *****/
 
@@ -254,5 +268,27 @@
   .rodape {
     grid-template-columns: 1fr;
     gap: 60px;
+  }
+
+  /***** BOTÃO FLUTUANTE DO WHATSAPP *****/
+  .whatsapp-container a {
+    background-color: #25d366;
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .whatsapp-container img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .whatsapp-container a:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
   }
 }

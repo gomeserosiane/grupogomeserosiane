@@ -8,8 +8,7 @@ const cardImages = [
     "images-slider/slider-funeraria3.png", "images-slider/slider-funeraria4.png"], // Card 1 (Funerária)
 
   ["images-slider/slider-seguros1.png", "images-slider/slider-seguros2.png",
-    "images-slider/slider-seguros3.png", "images-slider/slider-seguros4.png",
-    "images-slider/slider-seguros5.png"], // Card 2 (Seguros)
+    "images-slider/slider-seguros3.png", "images-slider/slider-seguros4.png"], // Card 2 (Seguros)
 
   ["images-slider/slider-certificados.png"], // Card 3 (Certificados)
 

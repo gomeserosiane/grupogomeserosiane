@@ -56,7 +56,7 @@
 
   #mobile-menu img {
     width: 250px;
-    margin: 30px 0 50px;
+    margin: 80px 0 50px;
   }
 
   #mobile-menu p {
@@ -67,7 +67,7 @@
 
   /***** SEÇÃO HERO *****/
   .hero {
-    padding: 80px 20px;
+    padding: 180px 20px;
   }
 
   .hero h1 {
@@ -137,15 +137,22 @@
 
   /***** SEÇÃO SERVIÇOS *****/
 
+  .slider-wrapper {
+    display: flex;
+  }
+
   .cards-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
+    gap: 40px;                         /* remove espaçamento lateral */
+    padding: 20px;                   /* remove padding das laterais */
+    scroll-snap-type: x mandatory;
+    overflow-x: auto;
   }
 
   .card {
-    flex: 0 0 100%;
-    max-width: 90%;
+    flex: 0 0 90%;
+    scroll-snap-align: center;      /* centraliza perfeitamente */
+    margin: 0 auto;                 /* garante centralização */
+    max-width: 100%;
   }
 
   .card-front img {
@@ -155,8 +162,9 @@
   /* --- BOTÕES DO MESMO TAMANHO --- */
   .card-buttons {
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
     padding: 0;
+    margin: 0;
   }
 
   .card-buttons .btn-info,

@@ -67,7 +67,7 @@
 
   /***** SEÇÃO HERO *****/
   .hero {
-    padding: 180px 20px;
+    padding: 60px 20px;
   }
 
   .hero h1 {
@@ -127,7 +127,7 @@
   }
 
   .sobre-conteudo img {
-    width: 350px;
+    width: 300px;
     text-align: center;
     height: auto;
     flex-shrink: 0;

@@ -141,6 +141,13 @@
     display: flex;
   }
 
+  .slider-btn {
+    margin: 0 15px;
+    font-size: 60px;
+    width: 35px;
+    height: 90px;
+  }
+
   .cards-container {
     gap: 40px;                         /* remove espaçamento lateral */
     padding: 20px;                   /* remove padding das laterais */
@@ -157,6 +164,14 @@
 
   .card-front img {
     height: 180px;
+  }
+
+  .card-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .card-content p {
+    font-size: 1.1rem;
   }
 
   /* --- BOTÕES DO MESMO TAMANHO --- */
@@ -256,7 +271,11 @@
   }
 
   .card-servico h3 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+  }
+
+  .card-servico p {
+    font-size: 1.1rem;
   }
 
   .botoes-card {
@@ -298,6 +317,14 @@
   .video-container iframe {
     width: 100%;
     height: 100%;
+  }
+
+  .contato {
+    padding: 60px 50px;
+  }
+
+  .contato img {
+    display: none;
   }
 
   /***** SEÇÃO FOOTER *****/

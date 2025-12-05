@@ -1,7 +1,11 @@
 
 .servicos {
-    padding: 50px 20px;
-    background: #f3f3f3;
+  padding: 50px 20px;
+  background: #FFF;
+  background: -webkit-linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(79, 155, 255, 1) 100%);
+  background: -moz-linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(79, 155, 255, 1) 100%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(79, 155, 255, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#FFFFFF", endColorstr="#4F9BFF", GradientType=0);
 }
 
 .servicos .grid {
@@ -37,6 +41,7 @@
 .cards-container::-webkit-scrollbar {
   display: none;
 }
+
 .cards-container {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -60,6 +65,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0 30px;
 }
 
 .left-btn {
@@ -84,14 +90,16 @@
   width: 100%;
   height: 300px;
   object-fit: cover;
-  border-bottom: 1px solid #ccc; /* borda separando imagem do conteúdo */
+  border-bottom: 1px solid #ccc;
+  /* borda separando imagem do conteúdo */
 }
 
 .card-content {
   padding: 15px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* espaço entre descrição e botões */
+  justify-content: space-between;
+  /* espaço entre descrição e botões */
   min-height: 120px;
 }
 
@@ -160,10 +168,11 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   justify-content: center;
   align-items: center;
-  flex-direction: column; /* permite colocar o botão abaixo */
+  flex-direction: column;
+  /* permite colocar o botão abaixo */
   z-index: 1000;
 }
 
@@ -172,7 +181,7 @@
   position: relative;
   max-width: 80%;
   max-height: 80%;
-  background: rgba(0,0,0,0.2);
+  background: rgba(0, 0, 0, 0.2);
   border: 2px solid #000;
   border-radius: 10px;
   display: flex;
@@ -221,13 +230,14 @@
 
 /****** SETAS DO SLIDER ******/
 .arrow {
-  background: rgba(0,0,0,0.2);
+  background: rgba(0, 0, 0, 0.2);
   border-radius: 50px;
   color: white;
   border: 2px solid #000;
   padding: 15px;
   cursor: pointer;
-  position: absolute; /* permite seguir o centro do slider */
+  position: absolute;
+  /* permite seguir o centro do slider */
   top: 50%;
   transform: translateY(-50%);
   font-size: 40px;

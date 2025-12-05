@@ -3,21 +3,21 @@
   padding: 60px 20px;
   background: #FFF;
   display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: start;
-    gap: 40px;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 40px;
 }
 
-.contato > h2,
-  .contato > p,
-  .contato > img {
-    grid-column: 1;
-    padding-left: 100px;
-  }
+.contato>h2,
+.contato>p,
+.contato>img {
+  grid-column: 1;
+  padding-left: 100px;
+}
 
-  .contato > h2 {
-    margin-top: 0;
-  }
+.contato>h2 {
+  margin-top: 0;
+}
 
 .contato h2 {
   font-size: 2rem;
@@ -37,10 +37,10 @@
 }
 
 .contato form {
-    grid-column: 2;
-    width: 100%;
-    margin-top: -220px;
-  }
+  grid-column: 2;
+  width: 100%;
+  margin-top: -220px;
+}
 
 form {
   max-width: 500px;

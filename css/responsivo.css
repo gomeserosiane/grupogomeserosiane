@@ -319,12 +319,51 @@
     height: 100%;
   }
 
+  /***** SEÇÃO CONTATO *****/
   .contato {
     padding: 60px 50px;
+    background: #fff;
+    display: flex;           /* muda para 1 coluna */
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .contato > h2,
+  .contato > p,
+  .contato > img,
+  .contato > form {
+    width: 100%;
+    padding-left: 0;         /* remove o deslocamento */
+    grid-column: auto;       /* impede bug do grid */
   }
 
   .contato img {
     display: none;
+  }
+
+  .contato h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #222;
+    text-align: center;
+  }
+
+  .contato p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .contato form {
+    width: 100%;
+    margin-top: 0;            /* remove posição quebrada */
+  }
+
+  form {
+    max-width: 600px;
+    margin: 0 auto;
   }
 
   /***** SEÇÃO FOOTER *****/

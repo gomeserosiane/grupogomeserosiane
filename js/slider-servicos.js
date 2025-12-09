@@ -3,8 +3,8 @@ const cardImages = [
   ["images-slider/slider-consultasmedicas1.png", "images-slider/slider-consultasmedicas2.png",
     "images-slider/slider-consultasmedicas3.png", "images-slider/slider-consultasmedicas4.png"], // Card 0 (Consultas médicas)
 
-  ["images-slider/slider-funeraria1.png", "images-slider/slider-funeraria2.png", 
-    "images-slider/slider-funeraria3.png", "images-slider/slider-funeraria4.png"], // Card 1 (Funerária)
+  ["images-slider/slider-planofunerario1.png", "images-slider/slider-planofunerario2.png", 
+    "images-slider/slider-planofunerario3.png", "images-slider/slider-planofunerario4.png"], // Card 1 (Funerária)
 
   ["images-slider/slider-seguros1.png", "images-slider/slider-seguros2.png",
     "images-slider/slider-seguros3.png", "images-slider/slider-seguros4.png"], // Card 2 (Seguros)

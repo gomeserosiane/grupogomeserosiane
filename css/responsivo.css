@@ -218,8 +218,8 @@
   }
 
   .close-btn {
-    top: 100px;
-    right: 45%;
+    top: 120px;
+    right: 10%;
     width: 40px;
     height: 40px;
     font-size: 28px;
@@ -227,19 +227,21 @@
   }
 
   .arrow {
+    width: 30px;
+    height: 80px;
     padding: 10px;
     font-size: 26px;
-    top: calc(50% + 40px);
-    bottom: 40px;
-    transform: none;
+    font-weight: bold;
+    top: 45% !important;
+    transform: none !important;
   }
 
   .left-arrow {
-    left: 20px;
+    left: 25px;
   }
 
   .right-arrow {
-    right: 20px;
+    right: 25px;
   }
 
   .btn-whats-slider {

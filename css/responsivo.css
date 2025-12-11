@@ -149,16 +149,20 @@
   }
 
   .cards-container {
-    gap: 40px;                         /* remove espaçamento lateral */
-    padding: 20px;                   /* remove padding das laterais */
+    gap: 40px;
+    /* remove espaçamento lateral */
+    padding: 20px;
+    /* remove padding das laterais */
     scroll-snap-type: x mandatory;
     overflow-x: auto;
   }
 
   .card {
     flex: 0 0 90%;
-    scroll-snap-align: center;      /* centraliza perfeitamente */
-    margin: 0 auto;                 /* garante centralização */
+    scroll-snap-align: center;
+    /* centraliza perfeitamente */
+    margin: 0 auto;
+    /* garante centralização */
     max-width: 100%;
   }
 
@@ -201,9 +205,13 @@
   /***** SEÇÃO SERVIÇOS (SLIDER) *****/
 
   .slider-modal {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 999999999 !important;
+    background: rgba(0, 0, 0, 0.7);
+    overflow: hidden !important;
   }
 
   .slider-content {
@@ -254,7 +262,8 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    bottom: 6%;       /* altura perfeita para ficar entre as setas */
+    bottom: 6%;
+    /* altura perfeita para ficar entre as setas */
     left: 50%;
     transform: translateX(-50%);
     z-index: 2000;
@@ -325,18 +334,21 @@
   .contato {
     padding: 60px 50px;
     background: #fff;
-    display: flex;           /* muda para 1 coluna */
+    display: flex;
+    /* muda para 1 coluna */
     flex-direction: column;
     gap: 30px;
   }
 
-  .contato > h2,
-  .contato > p,
-  .contato > img,
-  .contato > form {
+  .contato>h2,
+  .contato>p,
+  .contato>img,
+  .contato>form {
     width: 100%;
-    padding-left: 0;         /* remove o deslocamento */
-    grid-column: auto;       /* impede bug do grid */
+    padding-left: 0;
+    /* remove o deslocamento */
+    grid-column: auto;
+    /* impede bug do grid */
   }
 
   .contato img {
@@ -360,7 +372,8 @@
 
   .contato form {
     width: 100%;
-    margin-top: 0;            /* remove posição quebrada */
+    margin-top: 0;
+    /* remove posição quebrada */
   }
 
   form {

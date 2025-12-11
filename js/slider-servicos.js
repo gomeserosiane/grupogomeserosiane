@@ -3,7 +3,7 @@ const cardImages = [
   ["images-slider/slider-consultasmedicas1.png", "images-slider/slider-consultasmedicas2.png",
     "images-slider/slider-consultasmedicas3.png", "images-slider/slider-consultasmedicas4.png"], // Card 0 (Consultas médicas)
 
-  ["images-slider/slider-planofunerario1.png", "images-slider/slider-planofunerario2.png", 
+  ["images-slider/slider-planofunerario1.png", "images-slider/slider-planofunerario2.png",
     "images-slider/slider-planofunerario3.png", "images-slider/slider-planofunerario4.png"], // Card 1 (Funerária)
 
   ["images-slider/slider-seguros1.png", "images-slider/slider-seguros2.png",
@@ -40,6 +40,11 @@ document.querySelectorAll('.btn-info').forEach(btn => {
     currentImageIndex = 0;
     showImages(currentCardIndex);
     modal.style.display = 'flex';
+
+    // DESATIVAR ROLAGEM DA PÁGINA
+    document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
+
   });
 });
 
@@ -47,11 +52,16 @@ document.querySelectorAll('.btn-info').forEach(btn => {
 closeBtn.addEventListener('click', () => {
   modal.style.display = 'none';
   sliderImagesContainer.innerHTML = '';
+
+  // REATIVAR ROLAGEM
+  document.body.style.overflow = 'auto';
+  document.documentElement.style.overflow = 'auto';
+
 });
 
 // Mostrar imagens do card
 function showImages(cardIndex) {
-  
+
   // --- Suporte a Swipe no Mobile (Função de scroll - para passar as imagens tocando na tela) ---
   let touchStartX = 0;
   let touchEndX = 0;

@@ -205,13 +205,13 @@
   /***** SEÇÃO SERVIÇOS (SLIDER) *****/
 
   .slider-modal {
-    position: fixed !important;
-    inset: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    z-index: 999999999 !important;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999999999;
     background: rgba(0, 0, 0, 0.7);
-    overflow: hidden !important;
+    overflow: hidden;
   }
 
   .slider-content {
@@ -245,11 +245,11 @@
   }
 
   .left-arrow {
-    left: 25px;
+    left: 15px;
   }
 
   .right-arrow {
-    right: 25px;
+    right: 15px;
   }
 
   .btn-whats-slider {

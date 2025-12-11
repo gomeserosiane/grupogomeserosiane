@@ -5,7 +5,6 @@
   background: -webkit-linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(79, 155, 255, 1) 100%);
   background: -moz-linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(79, 155, 255, 1) 100%);
   background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(79, 155, 255, 1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#FFFFFF", endColorstr="#4F9BFF", GradientType=0);
 }
 
 .servicos .grid {
@@ -163,7 +162,7 @@
 /****** MODAL ******/
 .slider-modal {
   display: none;
-  position: fixed;
+  position: fixed !important;
   top: 0;
   left: 0;
 
@@ -172,10 +171,11 @@
 
   background: rgba(0, 0, 0, 0.7);
   z-index: 999999 !important;
+  
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  overflow: hidden !important;
+  overflow: hidden;
 }
 
 /****** CONTEÚDO DO SLIDER ******/
@@ -223,7 +223,7 @@
   font-weight: bold;
 
   cursor: pointer;
-  z-index: 1002;
+  z-index: 999999;
 }
 
 .close-btn:hover {

@@ -10,18 +10,11 @@
 }
 
 /* Só o primeiro parágrafo recebe padding */
-.sobre p.primeira-linha {
-  font-size: 1.2rem;
-  text-align: center;
-  padding: 0 110px;
-  margin-bottom: 1em;
-}
-
 .sobre-conteudo {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
     padding: 0 80px;
     width: 100%;
@@ -31,7 +24,7 @@
 .sobre-conteudo p {
     flex: 1;              /* Ocupa todo o espaço disponível */
     min-width: 0;         /* Impede expansão infinita que empurra a imagem */
-    text-align: justify;
+    text-align: start;
     padding: 0;
     font-size: 1.2rem;
 }

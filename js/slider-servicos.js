@@ -24,107 +24,120 @@ const cardImages = [
   ["images-slider/slider-documentos.png"] // Card 9 (Documentação)
 ];
 
-const modal = document.getElementById('sliderModal');
-const sliderImagesContainer = modal.querySelector('.slider-images');
-const leftArrow = modal.querySelector('.left-arrow');
-const rightArrow = modal.querySelector('.right-arrow');
-const closeBtn = modal.querySelector('.close-btn');
+/***********************
+ * ELEMENTOS DO DOM
+ ***********************/
+const modal = document.getElementById("sliderModal");
+const sliderImagesContainer = modal.querySelector(".slider-images");
+const leftArrow = modal.querySelector(".left-arrow");
+const rightArrow = modal.querySelector(".right-arrow");
+const closeBtn = modal.querySelector(".close-btn");
 
+/***********************
+ * ESTADO DO SLIDER
+ ***********************/
 let currentCardIndex = 0;
 let currentImageIndex = 0;
 
-// Abrir modal
-document.querySelectorAll('.btn-info').forEach(btn => {
-  btn.addEventListener('click', () => {
-    currentCardIndex = parseInt(btn.dataset.card);
+/***********************
+ * ABRIR MODAL
+ ***********************/
+document.querySelectorAll(".btn-info").forEach(btn => {
+  btn.addEventListener("click", () => {
+    currentCardIndex = parseInt(btn.dataset.card, 10);
     currentImageIndex = 0;
-    showImages(currentCardIndex);
-    modal.style.display = 'flex';
 
-    // DESATIVAR ROLAGEM DA PÁGINA
-    document.body.style.overflow = 'hidden';
-    document.documentElement.style.overflow = 'hidden';
+    renderImage();
+    modal.style.display = "flex";
 
+    // Trava scroll SEM quebrar sticky
+    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
   });
 });
 
-// Fechar modal
-closeBtn.addEventListener('click', () => {
-  modal.style.display = 'none';
-  sliderImagesContainer.innerHTML = '';
+/***********************
+ * FECHAR MODAL
+ ***********************/
+function closeModal() {
+  modal.style.display = "none";
+  sliderImagesContainer.innerHTML = "";
 
-  // REATIVAR ROLAGEM
-  document.body.style.overflow = 'auto';
-  document.documentElement.style.overflow = 'auto';
+  // Restaura scroll corretamente (ESSENCIAL)
+  document.body.style.overflow = "";
+  document.documentElement.style.overflow = "";
+}
 
+closeBtn.addEventListener("click", closeModal);
+
+// Fecha ao clicar no fundo escuro
+modal.addEventListener("click", e => {
+  if (e.target === modal) closeModal();
 });
 
-// Mostrar imagens do card
-function showImages(cardIndex) {
+/***********************
+ * RENDERIZA IMAGEM
+ ***********************/
+function renderImage() {
+  sliderImagesContainer.innerHTML = "";
 
-  // --- Suporte a Swipe no Mobile (Função de scroll - para passar as imagens tocando na tela) ---
-  let touchStartX = 0;
-  let touchEndX = 0;
-
-  function handleGesture() {
-    const images = cardImages[currentCardIndex];
-
-    // Distância mínima do swipe para considerar gesto
-    const swipeThreshold = 50;
-
-    if (touchEndX + swipeThreshold < touchStartX) {
-      // Swipe Esquerda → Próxima imagem
-      currentImageIndex = (currentImageIndex + 1) % images.length;
-      showImages(currentCardIndex);
-    }
-
-    if (touchEndX > touchStartX + swipeThreshold) {
-      // Swipe Direita → Imagem anterior
-      currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-      showImages(currentCardIndex);
-    }
-  }
-
-  // Eventos de toque no container das imagens
-  sliderImagesContainer.addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-  });
-
-  sliderImagesContainer.addEventListener('touchmove', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-  });
-
-  sliderImagesContainer.addEventListener('touchend', () => {
-    handleGesture();
-  });
-
-  sliderImagesContainer.innerHTML = '';
-  const images = cardImages[cardIndex];
-
-  // Inserir a imagem atual
-  const img = document.createElement('img');
+  const images = cardImages[currentCardIndex];
+  const img = document.createElement("img");
   img.src = images[currentImageIndex];
   sliderImagesContainer.appendChild(img);
 
-  // Mostrar ou esconder setas
+  // Controle das setas
   if (images.length <= 1) {
-    leftArrow.style.display = 'none';
-    rightArrow.style.display = 'none';
+    leftArrow.style.display = "none";
+    rightArrow.style.display = "none";
   } else {
-    leftArrow.style.display = 'block';
-    rightArrow.style.display = 'block';
+    leftArrow.style.display = "block";
+    rightArrow.style.display = "block";
   }
 }
 
-// Navegação das setas
-leftArrow.addEventListener('click', () => {
+/***********************
+ * NAVEGAÇÃO POR SETAS
+ ***********************/
+leftArrow.addEventListener("click", () => {
   const images = cardImages[currentCardIndex];
   currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-  showImages(currentCardIndex);
+  renderImage();
 });
 
-rightArrow.addEventListener('click', () => {
+rightArrow.addEventListener("click", () => {
   const images = cardImages[currentCardIndex];
   currentImageIndex = (currentImageIndex + 1) % images.length;
-  showImages(currentCardIndex);
+  renderImage();
+});
+
+/***********************
+ * SWIPE MOBILE (UMA VEZ)
+ ***********************/
+let touchStartX = 0;
+let touchEndX = 0;
+
+sliderImagesContainer.addEventListener("touchstart", e => {
+  touchStartX = e.changedTouches[0].screenX;
+});
+
+sliderImagesContainer.addEventListener("touchmove", e => {
+  touchEndX = e.changedTouches[0].screenX;
+});
+
+sliderImagesContainer.addEventListener("touchend", () => {
+  const images = cardImages[currentCardIndex];
+  if (images.length <= 1) return;
+
+  const swipeThreshold = 50;
+
+  if (touchEndX + swipeThreshold < touchStartX) {
+    currentImageIndex = (currentImageIndex + 1) % images.length;
+    renderImage();
+  }
+
+  if (touchEndX > touchStartX + swipeThreshold) {
+    currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+    renderImage();
+  }
 });

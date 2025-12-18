@@ -107,7 +107,6 @@
   }
 
   /***** SEÇÃO SOBRE *****/
-
   .sobre p.primeira-linha {
     padding: 0 20px;
     text-align: center;
@@ -136,7 +135,6 @@
   }
 
   /***** SEÇÃO SERVIÇOS *****/
-
   .slider-wrapper {
     display: flex;
   }
@@ -328,6 +326,15 @@
   .video-container iframe {
     width: 100%;
     height: 100%;
+  }
+
+  /***** SEÇÃO PARCEIROS *****/
+  .parceiros {
+    padding: 60px 30px;
+  }
+
+  .carousel-track img {
+    width: 120px;
   }
 
   /***** SEÇÃO CONTATO *****/

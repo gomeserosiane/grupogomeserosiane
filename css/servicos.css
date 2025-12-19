@@ -125,6 +125,7 @@
   padding: 8px 12px;
   cursor: pointer;
   border-radius: 5px;
+  font-weight: bold;
 }
 
 .btn-info:hover {
@@ -135,6 +136,7 @@
 .btn-whats {
   background-color: #25D366;
   color: white;
+  font-weight: bold;
   border: none;
   padding: 8px 12px;
   cursor: pointer;

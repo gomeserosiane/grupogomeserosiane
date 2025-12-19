@@ -4,15 +4,19 @@
   background: #FFF;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: start;
-  gap: 40px;
+  align-items: center;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .contato>h2,
 .contato>p,
 .contato>img {
   grid-column: 1;
-  padding-left: 100px;
+  justify-self: center;
+  text-align: center;
+  padding-left: 0; /* remove o deslocamento */
 }
 
 .contato>h2 {
@@ -29,21 +33,24 @@
 .contato p {
   font-size: 1.2rem;
   color: #555;
-  margin-bottom: 40px;
+ 
 }
 
 .contato img {
-  width: 400px;
+  width: 320px;
+  max-width: 100%;
 }
 
 .contato form {
   grid-column: 2;
   width: 100%;
   margin-top: -220px;
+  justify-self: center;
 }
 
 form {
   max-width: 500px;
+  width: 100%;
   margin: 0 auto;
   text-align: left;
 }

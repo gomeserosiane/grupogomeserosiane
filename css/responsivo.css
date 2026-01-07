@@ -272,6 +272,197 @@
     background-color: #25D366;
   }
 
+  /***** SEÇÃO SERVIÇOS (IMÓVEIS) *****/
+  .imoveis-track {
+    animation: slide 15s linear infinite;
+  }
+
+  .imovel-item {
+    min-width: 250px;
+  }
+
+  @keyframes slide {
+    from {
+      transform: translateX(20%);
+    }
+
+    to {
+      transform: translateX(-600%);
+    }
+  }
+
+  /* MODAL CONTAINER */
+  .imovel-modal {
+    position: fixed;
+    inset: 0;
+    /* top, right, bottom, left = 0 */
+    width: 100%;
+    height: 100dvh;
+    min-height: -webkit-fill-available;
+    background: rgba(0, 0, 0, 0.85);
+    display: none;
+    z-index: 2147483647;
+    /* acima de qualquer elemento */
+  }
+
+  .imovel-modal.active {
+    display: flex;
+    z-index: 2147483647;
+  }
+
+  /* CONTEÚDO OCUPA TELA TODA */
+  .imovel-modal-content {
+    width: 85%;
+    height: 85%;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    /* slider em cima / info embaixo */
+  }
+
+  /* SLIDER EM CIMA */
+  .imovel-slider {
+    width: 100%;
+    height: 45vh;
+  }
+
+  .imovel-slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* CONTEÚDO ABAIXO */
+  .imovel-info {
+    width: 100%;
+    height: calc(100vh - 45vh);
+    padding: 20px;
+    overflow-y: auto;
+    text-align: center;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* BOTÃO FECHAR SEMPRE VISÍVEL */
+  .close-btn-imovel {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 99999999;
+  }
+
+  /* BOTÕES UM ABAIXO DO OUTRO */
+  .imovel-buttons {
+    flex-direction: column;
+    gap: 15px;
+    margin: 25px 0 40px;
+  }
+
+  .imovel-buttons .btn {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+
+  /***** SEÇÃO GRUPO STATUS *****/
+  .grupo-card {
+    width: 80%;
+    padding: 30px 20px;
+  }
+
+  .grupo-card .grupo-logo {
+    max-width: 200px;
+    border-radius: 20px;
+  }
+
+  .grupo-conteudo {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .grupo-divider {
+    display: none;
+  }
+
+  .grupo-coluna {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px 40px 15px;
+  }
+
+  .grupo-img {
+    width: 100%;
+    max-width: 100%;
+    height: 200px;
+  }
+
+  .grupo-carousel {
+    width: 100%;
+  }
+
+  .grupo-carousel-track1 {
+    gap: 10px;
+    animation: scroll-mobile1 20s linear infinite;
+  }
+
+  .grupo-carousel-track1 img {
+    width: 100%;
+    min-width: 100%;
+    height: 150px;
+  }
+
+  @keyframes scroll-mobile1 {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-800%);
+    }
+  }
+
+  .grupo-carousel-track2 {
+    gap: 10px;
+    animation: scroll-mobile2 20s linear infinite;
+  }
+
+  .grupo-carousel-track2 img {
+    width: 100%;
+    min-width: 100%;
+    height: 150px;
+  }
+
+  @keyframes scroll-mobile2 {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-800%);
+    }
+  }
+
+  /* VÍDEOS */
+  .grupo-coluna video {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  /* BOTÕES UM ABAIXO DO OUTRO */
+  .grupo-botoes {
+    flex-direction: column;
+    gap: 15px;
+    width: 250px;
+  }
+
+  .grupo-botoes .btn {
+    width: 100%;
+    text-align: center;
+    border-radius: 16px;
+  }
+
   /***** SEÇÃO OUTROS-SERVIÇOS *****/
 
   .card-servico {
@@ -335,6 +526,34 @@
 
   .carousel-track img {
     width: 80px;
+  }
+
+  .carousel-row.top .carousel-track {
+    animation: scroll-left 10s linear infinite;
+  }
+
+  .carousel-row.bottom .carousel-track {
+    animation: scroll-right 10s linear infinite;
+  }
+
+  @keyframes scroll-left {
+    from {
+      transform: translateX(40%);
+    }
+
+    to {
+      transform: translateX(-60%);
+    }
+  }
+
+  @keyframes scroll-right {
+    from {
+      transform: translateX(-60%);
+    }
+
+    to {
+      transform: translateX(40%);
+    }
   }
 
   /***** SEÇÃO CONTATO *****/

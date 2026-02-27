@@ -55,7 +55,9 @@ document.addEventListener('DOMContentLoaded', () => {
     3: {
       subtitulo: 'Casa para Alugar - Marambaia',
       descricoes: [
-        'Localizado em uma das regiões mais movimentadas da cidade, este imóvel possui área de 24,5 m com espaço amplo e 1 banheiro, perfeito para atender às necessidades de seu negócio. Com uma fachada , o espaço que oferece grande visibilidade para atrair clientes e alavancar suas vendas.'
+        'Localizado na Passagem Santa Marta, Nº 7, Casa "A", no Bairro da Marambaia em Belém.',
+        'Localização privilegiada em frente ao Supercado Cidade da Marambaia.',
+        'O imóvel se trata de 2 andares, com 3/4 sendo 1 suíte, 2 banheiros, sala de estar, cozinha e lavabo'
       ],
       imagens: [
         'images-imoveis/casa marambaia pass sta marta.jpeg',
@@ -113,7 +115,9 @@ document.addEventListener('DOMContentLoaded', () => {
     7: {
       subtitulo: 'Casa para Alugar - Marambaia',
       descricoes: [
-        'Localizado em uma das regiões mais movimentadas da cidade, este imóvel possui área de 24,5 m com espaço amplo e 1 banheiro, perfeito para atender às necessidades de seu negócio. Com uma fachada , o espaço que oferece grande visibilidade para atrair clientes e alavancar suas vendas.'
+        'Localizado na Passagem Santa Marta, Nº 7, Casa "A", no Bairro da Marambaia em Belém.',
+        'Localização privilegiada em frente ao Supercado Cidade da Marambaia.',
+        'O imóvel se trata de 2 andares, com 3/4 sendo 1 suíte, 2 banheiros, sala de estar, cozinha e lavabo'
       ],
       imagens: [
         'images-imoveis/casa marambaia pass sta marta.jpeg',

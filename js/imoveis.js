@@ -53,6 +53,30 @@ document.addEventListener('DOMContentLoaded', () => {
       ]
     },
     3: {
+      subtitulo: 'Casa para Alugar - Marambaia',
+      descricoes: [
+        'Localizado em uma das regiões mais movimentadas da cidade, este imóvel possui área de 24,5 m com espaço amplo e 1 banheiro, perfeito para atender às necessidades de seu negócio. Com uma fachada , o espaço que oferece grande visibilidade para atrair clientes e alavancar suas vendas.'
+      ],
+      imagens: [
+        'images-imoveis/casa marambaia pass sta marta.jpeg',
+        'images-imoveis/casa marambaia pass sta marta2.jpeg',
+        'images-imoveis/casa marambaia pass sta marta3.jpeg',
+        'images-imoveis/casa marambaia pass sta marta4.jpeg',
+        'images-imoveis/casa marambaia pass sta marta5.jpeg',
+        'images-imoveis/casa marambaia pass sta marta6.jpeg',
+        'images-imoveis/casa marambaia pass sta marta7.jpeg',
+        'images-imoveis/casa marambaia pass sta marta8.jpeg',
+        'images-imoveis/casa marambaia pass sta marta9.jpeg',
+        'images-imoveis/casa marambaia pass sta marta10.jpeg',
+        'images-imoveis/casa marambaia pass sta marta11.jpeg',
+        'images-imoveis/casa marambaia pass sta marta12.jpeg',
+        'images-imoveis/casa marambaia pass sta marta13.jpeg',
+        'images-imoveis/casa marambaia pass sta marta14.jpeg',
+        'images-imoveis/casa marambaia pass sta marta15.jpeg',
+        'images-imoveis/casa marambaia pass sta marta16.jpeg'
+      ]
+    },
+    4: {
       subtitulo: 'Ap. para Alugar – Marambaia',
       descricoes: [
         'Com 01 quarto, 01 sala, 01 banheiro e 38,00 m2 de área, este apartamento é ideal para quem busca praticidade e conforto. Além disso, está situado em uma região com uma ótima infraestrutura, próxima a feiras, supermercados e farmácias, facilitando o seu dia a dia.',
@@ -67,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'images-imoveis/casa-marambaia-img6.png'
       ]
     },
-    4: {
+    5: {
       subtitulo: 'Casa para Vender – Souza',
       descricoes: [
         'Com uma boa localização, próxima a escolas, supermercados, farmácias e com fácil acesso a transporte público, essa casa é ideal para quem deseja viver em um lugar tranquilo e com toda a infraestrutura necessária para o dia a dia.',
@@ -75,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
       ],
       imagens: ['images-imoveis/casa-souza-img1.png']
     },
-    5: {
+    6: {
       subtitulo: 'Ponto Comercial – Pedreira',
       descricoes: [
         'Localizado em uma das regiões mais movimentadas da cidade, este imóvel possui área de 24,5 m com espaço amplo e 1 banheiro, perfeito para atender às necessidades de seu negócio. Com uma fachada , o espaço que oferece grande visibilidade para atrair clientes e alavancar suas vendas.'
@@ -84,6 +108,30 @@ document.addEventListener('DOMContentLoaded', () => {
         'images-imoveis/ponto-comercial-pedreira-img1.png',
         'images-imoveis/ponto-comercial-pedreira-img2.png',
         'images-imoveis/ponto-comercial-pedreira-img3.png'
+      ]
+    },
+    7: {
+      subtitulo: 'Casa para Alugar - Marambaia',
+      descricoes: [
+        'Localizado em uma das regiões mais movimentadas da cidade, este imóvel possui área de 24,5 m com espaço amplo e 1 banheiro, perfeito para atender às necessidades de seu negócio. Com uma fachada , o espaço que oferece grande visibilidade para atrair clientes e alavancar suas vendas.'
+      ],
+      imagens: [
+        'images-imoveis/casa marambaia pass sta marta.jpeg',
+        'images-imoveis/casa marambaia pass sta marta2.jpeg',
+        'images-imoveis/casa marambaia pass sta marta3.jpeg',
+        'images-imoveis/casa marambaia pass sta marta4.jpeg',
+        'images-imoveis/casa marambaia pass sta marta5.jpeg',
+        'images-imoveis/casa marambaia pass sta marta6.jpeg',
+        'images-imoveis/casa marambaia pass sta marta7.jpeg',
+        'images-imoveis/casa marambaia pass sta marta8.jpeg',
+        'images-imoveis/casa marambaia pass sta marta9.jpeg',
+        'images-imoveis/casa marambaia pass sta marta10.jpeg',
+        'images-imoveis/casa marambaia pass sta marta11.jpeg',
+        'images-imoveis/casa marambaia pass sta marta12.jpeg',
+        'images-imoveis/casa marambaia pass sta marta13.jpeg',
+        'images-imoveis/casa marambaia pass sta marta14.jpeg',
+        'images-imoveis/casa marambaia pass sta marta15.jpeg',
+        'images-imoveis/casa marambaia pass sta marta16.jpeg'
       ]
     }
   };

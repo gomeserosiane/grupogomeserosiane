@@ -329,7 +329,7 @@
   display: flex;
   gap: 80px;
   padding: 40px;
-  animation: slide 12s linear infinite;
+  animation: slide 18s linear infinite;
 }
 
 .imoveis-track:hover {
@@ -400,7 +400,7 @@
   }
 
   to {
-    transform: translateX(-100%);
+    transform: translateX(-240%);
   }
 }
 

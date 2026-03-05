@@ -102,9 +102,16 @@
   padding: 15px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   /* espaço entre descrição e botões */
   min-height: 120px;
+}
+
+.card-content > img {
+  height: 350px;
+  width: 350px;
+  padding: 5px;
 }
 
 .card-content h2 {
@@ -329,7 +336,7 @@
   display: flex;
   gap: 80px;
   padding: 40px;
-  animation: slide 18s linear infinite;
+  animation: slide 14s linear infinite;
 }
 
 .imoveis-track:hover {
@@ -400,7 +407,7 @@
   }
 
   to {
-    transform: translateX(-240%);
+    transform: translateX(-60%);
   }
 }
 

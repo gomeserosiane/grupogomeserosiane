@@ -102,16 +102,9 @@
   padding: 15px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
   /* espaço entre descrição e botões */
   min-height: 120px;
-}
-
-.card-content > img {
-  height: 350px;
-  width: 350px;
-  padding: 5px;
 }
 
 .card-content h2 {

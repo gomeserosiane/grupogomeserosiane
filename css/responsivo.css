@@ -274,7 +274,7 @@
 
   /***** SEÇÃO SERVIÇOS (IMÓVEIS) *****/
   .imoveis-track {
-    animation: slide 15s linear infinite;
+    animation: slide 12s linear infinite;
   }
 
   .imovel-item {
@@ -287,7 +287,7 @@
     }
 
     to {
-      transform: translateX(-800%);
+      transform: translateX(-60%);
     }
   }
 

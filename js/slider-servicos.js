@@ -3,11 +3,10 @@ const cardImages = [
   ["images-slider/slider-consultasmedicas1.png", "images-slider/slider-consultasmedicas2.png",
     "images-slider/slider-consultasmedicas3.png", "images-slider/slider-consultasmedicas4.png"], // Card 0 (Consultas médicas)
 
-  ["images-slider/slider-planofunerario1.png", "images-slider/slider-planofunerario2.png",
-    "images-slider/slider-planofunerario3.png", "images-slider/slider-planofunerario4.png"], // Card 1 (Funerária)
+  ["images-slider/slider-funeraria.png"], // Card 1 (Funerária)
 
-  ["images-slider/slider-seguros1.png", "images-slider/slider-seguros2.png",
-    "images-slider/slider-seguros3.png", "images-slider/slider-seguros4.png"], // Card 2 (Seguros)
+  ["images-slider/slider-seguros.png", "images-slider/slider-seguros1.png",
+    "images-slider/slider-seguros2.png"], // Card 2 (Seguros)
 
   ["images-slider/slider-certificados.png"], // Card 3 (Certificados)
 

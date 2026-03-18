@@ -1,20 +1,20 @@
 // Array com imagens de cada card
 const cardImages = [
-  ["images-slider/slider-consultasmedicas1.png", "images-slider/slider-consultasmedicas2.png",
-    "images-slider/slider-consultasmedicas3.png", "images-slider/slider-consultasmedicas4.png"], // Card 0 (Consultas médicas)
+  ["images-slider/slider-consultas.png", "images-slider/slider-consultas1.png",
+    "images-slider/slider-consultas2.png", "images-slider/slider-consultas3.png"], // Card 0 (Consultas médicas)
 
   ["images-slider/slider-funeraria.png"], // Card 1 (Funerária)
 
   ["images-slider/slider-seguros.png", "images-slider/slider-seguros1.png",
     "images-slider/slider-seguros2.png"], // Card 2 (Seguros)
 
-  ["images-slider/slider-certificados.png"], // Card 3 (Certificados)
+  ["images-slider/slider-mobilidade-urbana.png"], // Card 3 (Seguros para motoristas)
 
-  ["images-slider/slider-servicosdemobildade.png"], // Card 4 (Serviços de mobilidade)
+  ["images-slider/slider-certificados.png"], // Card 4 (Certificados)
 
   ["images-slider/slider-imoveis.png"], // Card 5 (Imóveis)
 
-  ["images-slider/slider-planodesaude.png", "images-slider/slider-planoodonto.png"], // Card 6 (Planos de saude e odonto)
+  ["images-slider/slider-planos.png", "images-slider/slider-planos1.png"], // Card 6 (Planos de saude e odonto)
 
   ["images-slider/slider-otica.png"], // Card 7 (Ótica)
 

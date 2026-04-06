@@ -123,7 +123,7 @@
     }
 
     .hero-images {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 2fr);
         gap: 12px;
         margin-bottom: 28px;
     }

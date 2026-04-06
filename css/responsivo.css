@@ -118,6 +118,56 @@
         padding: 72px 0 60px;
     }
 
+    .hero {
+        padding: 80px 0 56px;
+    }
+
+    .hero-images {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin-bottom: 28px;
+    }
+
+    .hero-images img {
+        width: 130px;
+        height: 130px;
+        border-radius: 12px;
+    }
+
+    .hero h1 {
+        font-size: clamp(2rem, 8vw, 3rem);
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-actions a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .social-links {
+        flex-wrap: wrap;
+    }
+
+    .hero-panel-card {
+        padding: 22px;
+    }
+
+    .hero-panel-card h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero-highlights {
+        grid-template-columns: 1fr;
+    }
+
     .hero-highlights {
         grid-template-columns: 1fr;
     }

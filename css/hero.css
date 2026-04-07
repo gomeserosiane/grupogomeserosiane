@@ -37,13 +37,13 @@
     object-fit: cover;
     border-radius: 6px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
 }
 
+/*
 .hero-images img:hover {
     transform: translateY(-5px) scale(1.03);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-}
+}*/
 
 .hero-grid {
     width: var(--container);

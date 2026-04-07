@@ -105,11 +105,11 @@
     }
 
     .brand-kicker {
-        font-size: 0.72rem;
+        font-size: 0.64rem;
     }
 
     .logo {
-        font-size: 1rem;
+        font-size: 0.9rem;
         white-space: normal;
     }
 
@@ -191,15 +191,58 @@
     }
 
     .slider-btn {
-        display: none;
+        width: 35px;
+        height: 180px;
+        font-size: 2rem;
+        background: rgba(0, 89, 255, 0.452);
+    }
+
+    .left-btn {
+        left: 2px;
+    }
+
+    .right-btn {
+        right: 2px;
+    }
+
+    .card {
+        flex: 0 0 310px;
+    }
+
+    .card-imoveis {
+        height: auto;
+    }
+
+    .card-imoveis .card-front {
+        height: auto;
+    }
+
+    .card-imoveis .card-content {
+        height: auto;
+    }
+
+    .card-imoveis .card-front>img {
+        height: auto;
+        max-height: 260px;
+        object-fit: cover;
+    }
+
+    .imovel-buttons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .imovel-buttons>* {
+        width: 80%;
+        flex: 0 0 40px;
     }
 
     .card-front {
         height: 550px;
     }
-    
-    .card-front>img, 
-    .card-imoveis .card-front>img {
+
+    .card-front>img {
         height: 240px;
     }
 

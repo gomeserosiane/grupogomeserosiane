@@ -81,6 +81,23 @@ document.addEventListener('DOMContentLoaded', () => {
             ],
             indisponivel: false,
         },
+        4: {
+            subtitulo: 'Kitnet para alugar (Andar de cima) - Marambaia',
+            descricoes: [
+                'Kitnet para alugar no bairro da Marambaia em Belém.',
+                'São 24 m² de área útil, pensados para praticidade. Possui 1 dormitório, ideal para descanso. Há 1 varanda que entra iluminação natural.',
+                'O imóvel está desocupado, pronto para receber seus móveis e criar a rotina desejada. É entregue sem móveis, facilitando a personalização. Além disso, a simplicidade do layout favorece organização e conforto diário.',
+            ],
+            imagens: [
+                'images-imoveis/casa-marambaia-img1.png',
+                'images-imoveis/casa-marambaia-img2.png',
+                'images-imoveis/casa-marambaia-img3.png',
+                'images-imoveis/casa-marambaia-img4.png',
+                'images-imoveis/casa-marambaia-img5.png',
+                'images-imoveis/casa-marambaia-img6.png',
+            ],
+            indisponivel: false,
+        },
     };
 
     let imagensAtuais = [];

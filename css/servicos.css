@@ -253,7 +253,7 @@
 
 .slider-content {
     position: relative;
-    width: min(88vw, 980px);
+    width: min(88vw, 480px);
     max-height: 78vh;
     padding: 14px;
     border-radius: 28px;
@@ -300,11 +300,11 @@
 }
 
 .left-arrow {
-    left: max(18px, calc(50vw - 560px));
+    left: max(18px, calc(50vw - 360px));
 }
 
 .right-arrow {
-    right: max(18px, calc(50vw - 560px));
+    right: max(18px, calc(50vw - 360px));
 }
 
 .imovel-modal {

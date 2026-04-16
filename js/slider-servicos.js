@@ -1,17 +1,38 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     const cardImages = [
+
+        // CONSULTAS MÉDICAS //
         ['images-slider/slider-consultas.png', 'images-slider/slider-consultas1.png',
             'images-slider/slider-consultas2.png', 'images-slider/slider-consultas3.png'],
+
+        // FUNERÁRIA //
         ['images-slider/slider-funeraria.png'],
+
+        // SEGUROS //
         ['images-slider/slider-seguros.png', 'images-slider/slider-seguros1.png', 'images-slider/slider-seguros2.png'],
+
+        // SEGUROS PARA MOTORISTAS //
         ['images-slider/slider-mobilidade-urbana.png'],
+
+        // CERTIFICADOS //
         ['images-slider/slider-certificados.png'],
+
+        // IMÓVEIS //
         ['images-slider/slider-imoveis.png'],
+
+        // PLANOS DE SAÚDE E ODONTOLÓGICOS //
         ['images-slider/slider-planos.png', 'images-slider/slider-planos1.png'],
+
+        // ÓTICA //
         ['images-slider/slider-otica.png'],
+
+        // CONTABILIDADE //
         ['images-slider/slider-contabilidade.png'],
-        ['images-slider/slider-documentos.png'],
+
+        // DOCUMENTOS //
+        ['images-slider/slider-documentos.png', 'images-slider/slider-documentos2.jpeg', 
+            'images-slider/slider-documentos3.png', 'images-slider/slider-documentos4.png'],
     ];
 
     const modal = document.getElementById('sliderModal');

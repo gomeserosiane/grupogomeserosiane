@@ -28,7 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
         ['images-slider/slider-otica.png'],
 
         // CONTABILIDADE //
-        ['images-slider/slider-contabilidade.png'],
+        ['images-slider/slider-contabilidade.png', 'images-slider/slider-contabilidade2.png',
+            'images-slider/slider-contabilidade3.png', 'images-slider/slider-contabilidade4.png'],
 
         // DOCUMENTOS //
         ['images-slider/slider-documentos.png', 'images-slider/slider-documentos2.jpeg', 

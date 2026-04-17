@@ -7,13 +7,16 @@ document.addEventListener('DOMContentLoaded', () => {
             'images-slider/slider-consultas2.png', 'images-slider/slider-consultas3.png'],
 
         // FUNERÁRIA //
-        ['images-slider/slider-funeraria.png'],
+        ['images-slider/slider-funeraria.png', 'images-slider/slider-funeraria2.png', 
+            'images-slider/slider-funeraria3.png', 'images-slider/slider-funeraria4.png'],
 
         // SEGUROS //
         ['images-slider/slider-seguros.png', 'images-slider/slider-seguros1.png', 'images-slider/slider-seguros2.png'],
 
         // SEGUROS PARA MOTORISTAS //
-        ['images-slider/slider-mobilidade-urbana.png'],
+        ['images-slider/slider-seguro-motorista.png', 'images-slider/slider-seguro-motorista2.png', 
+            'images-slider/slider-seguro-motorista3.png', 'images-slider/slider-seguro-motorista4.png', 
+            'images-slider/slider-seguro-motorista5.png', 'images-slider/slider-seguro-motorista6.png'],
 
         // CERTIFICADOS //
         ['images-slider/slider-certificados.png'],

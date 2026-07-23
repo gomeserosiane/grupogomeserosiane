@@ -121,8 +121,20 @@ body.service-detail-open .hero-section,
 body.service-detail-open .about-section,
 body.service-detail-open .services-section,
 body.service-detail-open .real-estate-section,
+body.service-detail-open .business-detail-section,
 body.service-detail-open .blog-section,
 body.service-detail-open .partners-section {
+  display: none;
+}
+
+body.business-detail-open .hero-section,
+body.business-detail-open .about-section,
+body.business-detail-open .services-section,
+body.business-detail-open .real-estate-section,
+body.business-detail-open .service-detail-section,
+body.business-detail-open .blog-section,
+body.business-detail-open .partners-section,
+body.business-detail-open .contact-section {
   display: none;
 }
 
@@ -138,12 +150,33 @@ body.service-detail-open .partners-section {
   will-change: opacity, transform;
 }
 
+.business-detail-section {
+  min-height: 100vh;
+  padding: 132px 0 82px;
+  opacity: 0;
+  transform: translateY(22px);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(232, 246, 252, 0.94)),
+    radial-gradient(circle at top left, rgba(31, 180, 91, 0.2), transparent 34%);
+  transition: opacity 0.34s ease, transform 0.34s ease;
+}
+
 body.service-detail-visible .service-detail-section {
   opacity: 1;
   transform: translateY(0);
 }
 
+body.business-detail-visible .business-detail-section {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 body.service-detail-closing .service-detail-section {
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+body.business-detail-closing .business-detail-section {
   opacity: 0;
   transform: translateY(18px);
 }
@@ -155,9 +188,17 @@ body.service-detail-closing .service-detail-section {
   align-items: start;
 }
 
+.business-detail-layout {
+  display: grid;
+  gap: 28px;
+}
+
 .service-detail-hero,
 .detail-gallery,
-.service-detail-content article {
+.service-detail-content article,
+.business-detail-hero,
+.business-service-card,
+.business-contact-area {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.92);
@@ -187,10 +228,43 @@ body.service-detail-visible .service-detail-content article:nth-child(3) {
   animation-delay: 0.18s;
 }
 
+body.business-detail-visible .business-detail-hero,
+body.business-detail-visible .business-service-card,
+body.business-detail-visible .business-contact-area {
+  animation: detailPanelIn 0.46s ease both;
+}
+
 .service-detail-hero {
   display: grid;
   gap: 18px;
   padding: 30px;
+}
+
+.business-detail-hero {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 18px;
+  align-items: center;
+  padding: 24px 30px;
+}
+
+.business-detail-hero .button {
+  justify-self: start;
+}
+
+.business-detail-hero img {
+  justify-self: center;
+  width: 280px;
+  height: 280px;
+  padding: 12px;
+  
+  border-radius: 8px;
+  background: #fff;
+  object-fit: contain;
+}
+
+.business-detail-hero::after {
+  content: "";
 }
 
 .service-detail-hero h2 {
@@ -204,6 +278,33 @@ body.service-detail-visible .service-detail-content article:nth-child(3) {
   color: var(--muted);
   font-size: 1.05rem;
   line-height: 1.75;
+}
+
+.business-services {
+  display: block;
+}
+
+.business-services .service-card {
+  min-height: 650px;
+}
+
+.business-contact-area {
+  display: grid;
+  grid-template-columns: 0.78fr 1fr;
+  gap: 32px;
+  align-items: start;
+  padding: 30px;
+}
+
+.business-contact-area h2 {
+  margin: 0 0 14px;
+  font-size: clamp(2rem, 4vw, 3.15rem);
+  line-height: 1.05;
+}
+
+.business-contact-area p {
+  color: var(--muted);
+  line-height: 1.7;
 }
 
 .detail-actions {

@@ -15,6 +15,11 @@
     grid-template-columns: 1fr;
   }
 
+  .business-services,
+  .business-contact-area {
+    grid-template-columns: 1fr;
+  }
+
   .property-grid {
     grid-template-columns: 1fr;
   }
@@ -58,6 +63,14 @@
     max-width: 620px;
   }
 
+  .business-detail-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .business-detail-hero img {
+    width: 180px;
+  }
+
   .blog-card {
     grid-template-columns: 1fr;
   }
@@ -73,6 +86,10 @@
   }
 
   .service-detail-section {
+    padding-top: 118px;
+  }
+
+  .business-detail-section {
     padding-top: 118px;
   }
 
@@ -156,7 +173,7 @@
     gap: 10px;
   }
 
-  .hero-logos img {
+  .hero-logo-card img {
     min-height: 112px;
     padding: 14px;
   }

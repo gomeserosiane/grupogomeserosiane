@@ -88,11 +88,26 @@
           </div>
         </div>
 
-        <div class="hero-logos" aria-label="Empresas e frentes do grupo">
-          <img src="images-logos/logo-adm.png" alt="Gomes ADM">
-          <img src="images-logos/logo-contadora.png" alt="Gomes Contadora">
-          <img src="images-logos/logo-otica.png" alt="Gomes Otica">
-          <img src="images-logos/logo-funeraria.png" alt="Gomes Funeraria">
+        <div class="hero-companies" aria-label="Empresas e frentes do grupo">
+          <span class="hero-click-callout">Clique aqui <i data-lucide="arrow-down"></i></span>
+          <div class="hero-logos">
+            <button class="hero-logo-card" type="button" data-business-detail="administradora"
+              aria-label="Abrir serviços da administradora">
+              <img src="images-logos/logo-adm.png" alt="Gomes ADM">
+            </button>
+            <button class="hero-logo-card" type="button" data-business-detail="contadora"
+              aria-label="Abrir serviços da contadora">
+              <img src="images-logos/logo-contadora.png" alt="Gomes Contadora">
+            </button>
+            <button class="hero-logo-card" type="button" data-business-detail="otica"
+              aria-label="Abrir serviços da ótica">
+              <img src="images-logos/logo-otica.png" alt="Gomes Otica">
+            </button>
+            <button class="hero-logo-card" type="button" data-business-detail="funeraria"
+              aria-label="Abrir serviços funerários">
+              <img src="images-logos/logo-funeraria.png" alt="Gomes Funeraria">
+            </button>
+          </div>
         </div>
       </div>
     </section>
@@ -393,6 +408,34 @@
             <h3>Indicado para</h3>
             <ul id="service-detail-list"></ul>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="business-detail-section hidden" id="business-detail" tabindex="-1">
+      <div class="container business-detail-layout">
+        <div class="business-detail-hero">
+          <button class="button button-light" type="button" data-back-business><i data-lucide="arrow-left"></i> Voltar
+            ao site</button>
+          <img id="business-detail-logo" src="" alt="">
+        </div>
+
+        <div class="business-services" id="business-services"></div>
+
+        <div class="business-contact-area" id="business-contact">
+          <div>
+            <p class="section-kicker">Contato</p>
+            <h2>Fale conosco</h2>
+            <p>Preencha os dados e envie sua solicitação pelo WhatsApp.</p>
+          </div>
+          <form class="contact-form business-contact-form" id="business-contact-form">
+            <label>Nome/Razão social<input type="text" id="business-contact-name" required></label>
+            <label>CPF/CNPJ<input type="text" id="business-contact-document" required></label>
+            <label>Email<input type="email" id="business-contact-email" required></label>
+            <label>Telefone (WhatsApp)<input type="tel" id="business-contact-phone" required></label>
+            <label>Serviço<select id="business-contact-service" required></select></label>
+            <button class="button button-primary" type="submit"><i data-lucide="send"></i> Enviar pelo WhatsApp</button>
+          </form>
         </div>
       </div>
     </section>

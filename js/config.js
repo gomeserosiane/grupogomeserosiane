@@ -5,6 +5,6 @@ window.APP_CONFIG = {
   SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlmcHZqYm1meXVvcHlqZmR3a29nIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM0MzQ1MTEsImV4cCI6MjA5OTAxMDUxMX0.NP_qkBCQEXpmularb5_g_2Rn0HtOU6exIbNn7d1U7gU",
   TABLE_NAME: "blog_posts",
   PROPERTY_TABLE_NAME: "real_estate_properties",
-  DEFAULT_PROPERTY_LINK: "https://www.grupogomeserosiane.com.br/",
+  DEFAULT_PROPERTY_LINK: "https://www.gomeserosiane.com.br/",
   SITE_URL: "https://www.grupogomeserosiane.com.br/"
 };

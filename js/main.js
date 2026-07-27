@@ -19,18 +19,10 @@ const App = (() => {
   const detailPrev = document.querySelector("[data-detail-prev]");
   const detailNext = document.querySelector("[data-detail-next]");
   const backButton = document.querySelector("[data-back-services]");
-  const businessDetailSection = document.getElementById("business-detail");
-  const businessLogo = document.getElementById("business-detail-logo");
-  const businessServices = document.getElementById("business-services");
-  const businessBackButton = document.querySelector("[data-back-business]");
-  const businessContactForm = document.getElementById("business-contact-form");
-  const businessServiceSelect = document.getElementById("business-contact-service");
 
   let activeService = 0;
   let activeDetailImage = 0;
-  let activeBusinessService = 0;
   let currentDetail = null;
-  let currentBusinessServices = [];
   let isDetailTransitioning = false;
 
   const serviceDetails = [
@@ -156,29 +148,6 @@ const App = (() => {
     }
   ];
 
-  const businessPages = {
-    administradora: {
-      title: "Gomes Administradora",
-      logo: "images-logos/logo-adm.png",
-      serviceIndexes: [0, 1, 2, 3, 6]
-    },
-    contadora: {
-      title: "Gomes Contadora",
-      logo: "images-logos/logo-contadora.png",
-      serviceIndexes: [7, 8]
-    },
-    otica: {
-      title: "Gomes Ótica",
-      logo: "images-logos/logo-otica.png",
-      serviceIndexes: [5]
-    },
-    funeraria: {
-      title: "Gomes Funerária",
-      logo: "images-logos/logo-funeraria.png",
-      serviceIndexes: [4]
-    }
-  };
-
   // Abre e fecha o menu em telas menores.
   function setupMenu() {
     if (!menuButton || !mainNav) return;
@@ -212,7 +181,7 @@ const App = (() => {
       const email = document.getElementById("contact-email").value.trim();
       const phone = document.getElementById("contact-phone").value.trim();
       const subject = document.getElementById("contact-subject").value.trim();
-      const message = `Olá, meu nome é ${name}.%0AEmail: ${email}%0AWhatsApp: ${phone}%0AAssunto: ${subject}`;
+      const message = encodeURIComponent(`Olá, meu nome é ${name}.\nEmail: ${email}\nWhatsApp: ${phone}\nAssunto: ${subject}`);
 
       window.open(`https://wa.me/5591999635260?text=${message}`, "_blank", "noopener");
       contactForm.reset();
@@ -262,11 +231,6 @@ const App = (() => {
   function openServiceDetail(service) {
     if (isDetailTransitioning) return;
 
-    if (document.body.classList.contains("business-detail-open")) {
-      businessDetailSection.classList.add("hidden");
-      document.body.classList.remove("business-detail-open", "business-detail-visible", "business-detail-closing");
-    }
-
     currentDetail = service;
     activeDetailImage = 0;
     detailCategory.textContent = service.category;
@@ -313,138 +277,14 @@ const App = (() => {
     }, 360);
   }
 
-  function closeBusinessDetail(targetSelector = "#home") {
-    if (!document.body.classList.contains("business-detail-open") || isDetailTransitioning) {
-      scrollToSection(targetSelector);
-      return;
-    }
-
-    isDetailTransitioning = true;
-    document.body.classList.remove("business-detail-visible");
-    document.body.classList.add("business-detail-closing");
-
-    window.setTimeout(() => {
-      businessDetailSection.classList.add("hidden");
-      document.body.classList.remove("business-detail-open", "business-detail-closing");
-      isDetailTransitioning = false;
-      scrollToSection(targetSelector);
-    }, 360);
-  }
-
-  function getBusinessServices(page) {
-    return page.serviceIndexes.map((index) => serviceDetails[index]).filter(Boolean);
-  }
-
-  function updateBusinessArrows() {
-    const prevButton = businessServices.querySelector("[data-business-service-prev]");
-    const nextButton = businessServices.querySelector("[data-business-service-next]");
-
-    if (!prevButton || !nextButton) return;
-
-    prevButton.classList.toggle("hidden", activeBusinessService === 0 || currentBusinessServices.length <= 1);
-    nextButton.classList.toggle("hidden", activeBusinessService === currentBusinessServices.length - 1 || currentBusinessServices.length <= 1);
-  }
-
-  function showBusinessService(index) {
-    const cards = [...businessServices.querySelectorAll("[data-business-service-card]")];
-    activeBusinessService = Math.min(Math.max(index, 0), cards.length - 1);
-
-    cards.forEach((card, cardIndex) => {
-      card.classList.toggle("active", cardIndex === activeBusinessService);
-    });
-
-    updateBusinessArrows();
-    lucide.createIcons();
-  }
-
-  function renderBusinessServices(page) {
-    currentBusinessServices = page.serviceIndexes.map((serviceIndex) => ({
-      detail: serviceDetails[serviceIndex],
-      sourceCard: serviceCards[serviceIndex],
-      sourceIndex: serviceIndex
-    })).filter((service) => service.detail && service.sourceCard);
-
-    businessServices.innerHTML = `
-      <div class="slider-shell" data-business-service-slider>
-        <button class="slider-arrow slider-arrow-left" type="button" aria-label="Serviço anterior" data-business-service-prev>
-          <i data-lucide="chevron-left"></i>
-        </button>
-        <div class="service-stage" data-business-service-stage></div>
-        <button class="slider-arrow slider-arrow-right" type="button" aria-label="Próximo serviço" data-business-service-next>
-          <i data-lucide="chevron-right"></i>
-        </button>
-      </div>
-    `;
-
-    const stage = businessServices.querySelector("[data-business-service-stage]");
-    currentBusinessServices.forEach((service, index) => {
-      const card = service.sourceCard.cloneNode(true);
-      card.classList.toggle("active", index === 0);
-      card.setAttribute("data-business-service-card", index);
-      stage.appendChild(card);
-    });
-
-    businessServices.querySelector("[data-business-service-prev]").addEventListener("click", () => showBusinessService(activeBusinessService - 1));
-    businessServices.querySelector("[data-business-service-next]").addEventListener("click", () => showBusinessService(activeBusinessService + 1));
-    businessServices.querySelectorAll("[data-service-detail]").forEach((button) => {
-      button.addEventListener("click", () => {
-        openServiceDetail(serviceDetails[Number(button.dataset.serviceDetail)]);
-      });
-    });
-
-    activeBusinessService = 0;
-    showBusinessService(0);
-  }
-
-  // Preenche a página da empresa selecionada com serviços e formulário contextual.
-  function openBusinessDetail(pageKey) {
-    const page = businessPages[pageKey];
-    if (!page || isDetailTransitioning) return;
-
-    if (document.body.classList.contains("service-detail-open")) {
-      detailSection.classList.add("hidden");
-      document.body.classList.remove("service-detail-open", "service-detail-visible", "service-detail-closing");
-    }
-
-    const services = getBusinessServices(page);
-    businessLogo.src = page.logo;
-    businessLogo.alt = page.title;
-    renderBusinessServices(page);
-
-    businessServiceSelect.innerHTML = '<option value="">Selecione um serviço</option>' + services.map((service) => (
-      `<option value="${service.title}">${service.title}</option>`
-    )).join("");
-
-    isDetailTransitioning = true;
-    businessDetailSection.classList.remove("hidden");
-    document.body.classList.add("business-detail-open");
-
-    requestAnimationFrame(() => {
-      document.body.classList.add("business-detail-visible");
-      businessDetailSection.focus();
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-
-    window.setTimeout(() => {
-      isDetailTransitioning = false;
-    }, 420);
-
-    lucide.createIcons();
-  }
-
   // Quando a tela de detalhe estiver aberta, links do header/footer fecham a tela e levam à seção correta.
   function setupDetailNavigation() {
     document.querySelectorAll(".main-nav a[href^='#'], .footer-nav a[href^='#'], .brand[href^='#']").forEach((link) => {
       link.addEventListener("click", (event) => {
-        if (!document.body.classList.contains("service-detail-open") && !document.body.classList.contains("business-detail-open")) return;
+        if (!document.body.classList.contains("service-detail-open")) return;
 
         event.preventDefault();
         mainNav?.classList.remove("open");
-        if (document.body.classList.contains("business-detail-open")) {
-          closeBusinessDetail(link.getAttribute("href"));
-          return;
-        }
-
         closeServiceDetail(link.getAttribute("href"));
       });
     });
@@ -454,38 +294,6 @@ const App = (() => {
         event.preventDefault();
         closeServiceDetail(link.getAttribute("href"));
       });
-    });
-  }
-
-  function setupBusinessPages() {
-    document.querySelectorAll("[data-business-detail]").forEach((button) => {
-      button.addEventListener("click", () => openBusinessDetail(button.dataset.businessDetail));
-    });
-
-    businessBackButton?.addEventListener("click", () => closeBusinessDetail("#home"));
-  }
-
-  // Envia o formulário específico da página da empresa para o WhatsApp.
-  function setupBusinessContactForm() {
-    if (!businessContactForm) return;
-
-    businessContactForm.addEventListener("submit", (event) => {
-      event.preventDefault();
-
-      const name = document.getElementById("business-contact-name").value.trim();
-      const documentNumber = document.getElementById("business-contact-document").value.trim();
-      const email = document.getElementById("business-contact-email").value.trim();
-      const phone = document.getElementById("business-contact-phone").value.trim();
-      const service = businessServiceSelect.value;
-      const message = encodeURIComponent(`Olá, gostaria de atendimento.
-Nome/Razão social: ${name}
-CPF/CNPJ: ${documentNumber}
-Email: ${email}
-Telefone: ${phone}
-Serviço: ${service}`);
-
-      window.open(`https://wa.me/5591999635260?text=${message}`, "_blank", "noopener");
-      businessContactForm.reset();
     });
   }
 
@@ -520,8 +328,6 @@ Serviço: ${service}`);
     setupWhatsappForm();
     setupServiceSlider();
     setupDetailNavigation();
-    setupBusinessPages();
-    setupBusinessContactForm();
     lucide.createIcons();
   }
 

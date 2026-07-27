@@ -19,17 +19,45 @@ const BlogPage = (() => {
     return String(media || "").startsWith("data:video") || /\.(mp4|webm|ogg)$/i.test(String(media || ""));
   }
 
-  // Monta a mídia principal do post, aceitando imagem ou vídeo importado pelo CRM.
-  function createMediaMarkup(media, altText) {
-    if (isVideoMedia(media)) {
-      return `<video src="${media}" controls muted playsinline preload="metadata" aria-label="${altText}"></video>`;
+  // Aceita publicações antigas com URL única e publicações novas com lista JSON de mídias.
+  function normalizeMediaList(media) {
+    if (Array.isArray(media)) {
+      return media.filter(Boolean);
     }
 
-    return `<img src="${media}" alt="${altText}">`;
+    const mediaValue = String(media || "").trim();
+    if (!mediaValue) return [];
+
+    try {
+      const parsedMedia = JSON.parse(mediaValue);
+      return Array.isArray(parsedMedia) ? parsedMedia.filter(Boolean) : [mediaValue];
+    } catch (error) {
+      return [mediaValue];
+    }
+  }
+
+  // Monta a mídia principal do post, aceitando imagem ou vídeo importado pelo CRM.
+  function createMediaMarkup(media, altText) {
+    const firstMedia = normalizeMediaList(media)[0];
+
+    if (!firstMedia) {
+      return "";
+    }
+
+    if (isVideoMedia(firstMedia)) {
+      return `<video src="${firstMedia}" controls muted playsinline preload="metadata" aria-label="${altText}"></video>`;
+    }
+
+    return `<img src="${firstMedia}" alt="${altText}">`;
   }
 
   function createPostCard(post, index) {
     const article = document.createElement("article");
+    const linkUrl = String(post.link_url || "").trim();
+    const linkButton = linkUrl
+      ? `<a class="button button-light" href="${linkUrl}" target="_blank" rel="noopener">Saiba mais</a>`
+      : "";
+
     article.className = `blog-card ${index === activeIndex ? "active" : ""}`;
     article.innerHTML = `
       ${createMediaMarkup(post.image, post.title)}
@@ -41,9 +69,7 @@ const BlogPage = (() => {
             <i data-lucide="calendar-clock"></i>
             ${formatDate(post.created_at)}
           </time>
-          <a class="button button-light" href="${post.link_url || "#blog"}" target="_blank" rel="noopener">
-            Saiba mais
-          </a>
+          ${linkButton}
         </div>
       </div>
     `;

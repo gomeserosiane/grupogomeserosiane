@@ -88,11 +88,22 @@
           </div>
         </div>
 
-        <div class="hero-logos" aria-label="Empresas e frentes do grupo">
-          <img src="images-logos/logo-adm.png" alt="Gomes ADM">
-          <img src="images-logos/logo-contadora.png" alt="Gomes Contadora">
-          <img src="images-logos/logo-otica.png" alt="Gomes Otica">
-          <img src="images-logos/logo-funeraria.png" alt="Gomes Funeraria">
+        <div class="hero-brands">
+          <span class="hero-click-hint">Clique aqui <i data-lucide="arrow-down"></i></span>
+          <div class="hero-logos" aria-label="Empresas e frentes do grupo">
+            <button class="hero-logo-card" type="button" data-brand-page="adm" aria-label="Abrir serviços Gomes ADM">
+              <img src="images-logos/logo-adm.png" alt="Gomes ADM">
+            </button>
+            <button class="hero-logo-card" type="button" data-brand-page="contadora" aria-label="Abrir serviços Gomes Contadora">
+              <img src="images-logos/logo-contadora.png" alt="Gomes Contadora">
+            </button>
+            <button class="hero-logo-card" type="button" data-brand-page="otica" aria-label="Abrir serviços Gomes Ótica">
+              <img src="images-logos/logo-otica.png" alt="Gomes Otica">
+            </button>
+            <button class="hero-logo-card" type="button" data-brand-page="funeraria" aria-label="Abrir serviços Gomes Funerária">
+              <img src="images-logos/logo-funeraria.png" alt="Gomes Funeraria">
+            </button>
+          </div>
         </div>
       </div>
     </section>
@@ -397,6 +408,39 @@
             <ul id="service-detail-list"></ul>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section class="brand-page-section hidden" id="brand-page" tabindex="-1">
+      <div class="container">
+        <div class="brand-page-heading">
+          <button class="button button-light" type="button" data-brand-back><i data-lucide="arrow-left"></i> Voltar ao site</button>
+          <img id="brand-page-logo" src="" alt="">
+        </div>
+
+        <div class="slider-shell brand-services-shell">
+          <button class="slider-arrow" type="button" aria-label="Serviço anterior" data-brand-service-prev>
+            <i data-lucide="chevron-left"></i>
+          </button>
+          <div class="service-stage" id="brand-service-stage" aria-live="polite"></div>
+          <button class="slider-arrow" type="button" aria-label="Próximo serviço" data-brand-service-next>
+            <i data-lucide="chevron-right"></i>
+          </button>
+        </div>
+
+        <section class="brand-contact-area">
+          <h2>Fale conosco</h2>
+          <form class="contact-form" id="brand-contact-form">
+            <label>Nome/Razão social<input type="text" id="brand-contact-name" required></label>
+            <label>CPF/CNPJ<input type="text" id="brand-contact-document" required></label>
+            <label>Email<input type="email" id="brand-contact-email" required></label>
+            <label>Telefone (WhatsApp)<input type="tel" id="brand-contact-phone" required></label>
+            <label>Serviço
+              <select id="brand-contact-service" required></select>
+            </label>
+            <button class="button button-primary" type="submit"><i data-lucide="send"></i> Enviar</button>
+          </form>
+        </section>
       </div>
     </section>
 

@@ -126,6 +126,17 @@ body.service-detail-open .partners-section {
   display: none;
 }
 
+body.brand-page-open .hero-section,
+body.brand-page-open .about-section,
+body.brand-page-open .services-section,
+body.brand-page-open .real-estate-section,
+body.brand-page-open .blog-section,
+body.brand-page-open .partners-section,
+body.brand-page-open .contact-section,
+body.brand-page-open .service-detail-section {
+  display: none;
+}
+
 .service-detail-section {
   min-height: 100vh;
   padding: 132px 0 78px;
@@ -220,7 +231,66 @@ body.service-detail-visible .service-detail-content article:nth-child(3) {
 .detail-gallery img {
   width: 100%;
   height: 470px;
-  object-fit: cover;
+  object-fit: contain;
+  background: #f8fbfd;
+}
+
+.brand-page-section {
+  min-height: 100vh;
+  padding: 132px 0 84px;
+  background: #fff;
+}
+
+.brand-page-heading {
+  position: relative;
+  display: grid;
+  min-height: 170px;
+  place-items: center;
+  margin-bottom: 34px;
+}
+
+.brand-page-heading [data-brand-back] {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.brand-page-heading img {
+  width: min(270px, 52vw);
+  max-height: 170px;
+  object-fit: contain;
+}
+
+.brand-services-shell {
+  margin-bottom: 46px;
+}
+
+.brand-contact-area {
+  display: grid;
+  gap: 18px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.brand-contact-area h2 {
+  margin: 0;
+  text-align: center;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+@media (max-width: 760px) {
+  .brand-page-heading {
+    justify-items: center;
+    gap: 18px;
+    min-height: auto;
+  }
+
+  .brand-page-heading [data-brand-back] {
+    position: static;
+    justify-self: start;
+    transform: none;
+  }
 }
 
 .detail-gallery-arrow {

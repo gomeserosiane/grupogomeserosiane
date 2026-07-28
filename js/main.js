@@ -19,11 +19,21 @@ const App = (() => {
   const detailPrev = document.querySelector("[data-detail-prev]");
   const detailNext = document.querySelector("[data-detail-next]");
   const backButton = document.querySelector("[data-back-services]");
+  const brandPage = document.getElementById("brand-page");
+  const brandPageLogo = document.getElementById("brand-page-logo");
+  const brandServiceStage = document.getElementById("brand-service-stage");
+  const brandServicePrev = document.querySelector("[data-brand-service-prev]");
+  const brandServiceNext = document.querySelector("[data-brand-service-next]");
+  const brandBackButton = document.querySelector("[data-brand-back]");
+  const brandContactForm = document.getElementById("brand-contact-form");
+  const brandContactService = document.getElementById("brand-contact-service");
 
   let activeService = 0;
   let activeDetailImage = 0;
   let currentDetail = null;
   let isDetailTransitioning = false;
+  let activeBrandService = 0;
+  let currentBrandServices = [];
 
   const serviceDetails = [
     {
@@ -148,6 +158,29 @@ const App = (() => {
     }
   ];
 
+  const brandPages = {
+    adm: {
+      logo: "images-logos/logo-adm.png",
+      alt: "Gomes ADM",
+      services: [0, 1, 2, 3, 6]
+    },
+    contadora: {
+      logo: "images-logos/logo-contadora.png",
+      alt: "Gomes Contadora",
+      services: [7, 8]
+    },
+    otica: {
+      logo: "images-logos/logo-otica.png",
+      alt: "Gomes Ótica",
+      services: [5]
+    },
+    funeraria: {
+      logo: "images-logos/logo-funeraria.png",
+      alt: "Gomes Funerária",
+      services: [4]
+    }
+  };
+
   // Abre e fecha o menu em telas menores.
   function setupMenu() {
     if (!menuButton || !mainNav) return;
@@ -185,6 +218,26 @@ const App = (() => {
 
       window.open(`https://wa.me/5591999635260?text=${message}`, "_blank", "noopener");
       contactForm.reset();
+    });
+  }
+
+  function setupBrandContactForm() {
+    if (!brandContactForm) return;
+
+    brandContactForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const name = document.getElementById("brand-contact-name").value.trim();
+      const documentNumber = document.getElementById("brand-contact-document").value.trim();
+      const email = document.getElementById("brand-contact-email").value.trim();
+      const phone = document.getElementById("brand-contact-phone").value.trim();
+      const service = brandContactService.value;
+      const message = encodeURIComponent(
+        `Olá, gostaria de atendimento.\nNome/Razão social: ${name}\nCPF/CNPJ: ${documentNumber}\nEmail: ${email}\nTelefone: ${phone}\nServiço: ${service}`
+      );
+
+      window.open(`https://wa.me/5591999635260?text=${message}`, "_blank", "noopener");
+      brandContactForm.reset();
     });
   }
 
@@ -323,11 +376,95 @@ const App = (() => {
     showService(0);
   }
 
+  function updateBrandServiceArrows() {
+    if (!brandServicePrev || !brandServiceNext) return;
+
+    brandServicePrev.classList.toggle("hidden", activeBrandService === 0);
+    brandServiceNext.classList.toggle("hidden", activeBrandService === currentBrandServices.length - 1);
+  }
+
+  function showBrandService(index) {
+    activeBrandService = Math.min(Math.max(index, 0), currentBrandServices.length - 1);
+
+    brandServiceStage.querySelectorAll("[data-brand-service-card]").forEach((card, cardIndex) => {
+      card.classList.toggle("active", cardIndex === activeBrandService);
+    });
+
+    updateBrandServiceArrows();
+    lucide.createIcons();
+  }
+
+  function renderBrandServices(pageData) {
+    currentBrandServices = pageData.services;
+    activeBrandService = 0;
+    brandServiceStage.innerHTML = "";
+    brandContactService.innerHTML = "";
+
+    currentBrandServices.forEach((serviceIndex, index) => {
+      const sourceCard = serviceCards[serviceIndex];
+      const service = serviceDetails[serviceIndex];
+      const card = sourceCard.cloneNode(true);
+
+      card.classList.toggle("active", index === 0);
+      card.setAttribute("data-brand-service-card", serviceIndex);
+      card.querySelectorAll("[data-service-detail]").forEach((button) => {
+        button.addEventListener("click", () => {
+          closeBrandPage(false);
+          openServiceDetail(service);
+        });
+      });
+
+      brandServiceStage.appendChild(card);
+      brandContactService.insertAdjacentHTML("beforeend", `<option value="${service.title}">${service.title}</option>`);
+    });
+
+    updateBrandServiceArrows();
+    lucide.createIcons();
+  }
+
+  function openBrandPage(pageKey) {
+    const pageData = brandPages[pageKey];
+    if (!pageData || !brandPage) return;
+
+    brandPageLogo.src = pageData.logo;
+    brandPageLogo.alt = pageData.alt;
+    renderBrandServices(pageData);
+    document.body.classList.add("brand-page-open");
+    brandPage.classList.remove("hidden");
+    brandPage.focus();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function closeBrandPage(shouldScrollHome = true) {
+    if (!brandPage) return;
+
+    document.body.classList.remove("brand-page-open");
+    brandPage.classList.add("hidden");
+    brandServiceStage.innerHTML = "";
+    currentBrandServices = [];
+
+    if (shouldScrollHome) {
+      scrollToSection("#home");
+    }
+  }
+
+  function setupBrandPages() {
+    document.querySelectorAll("[data-brand-page]").forEach((button) => {
+      button.addEventListener("click", () => openBrandPage(button.dataset.brandPage));
+    });
+
+    brandBackButton?.addEventListener("click", () => closeBrandPage(true));
+    brandServicePrev?.addEventListener("click", () => showBrandService(activeBrandService - 1));
+    brandServiceNext?.addEventListener("click", () => showBrandService(activeBrandService + 1));
+  }
+
   function init() {
     setupMenu();
     setupWhatsappForm();
+    setupBrandContactForm();
     setupServiceSlider();
     setupDetailNavigation();
+    setupBrandPages();
     lucide.createIcons();
   }
 

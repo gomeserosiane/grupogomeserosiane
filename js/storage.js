@@ -295,8 +295,11 @@ const PropertyStorage = (() => {
   }
 
   function normalizeProperty(property) {
+    const hasLearnMoreUrl = Object.prototype.hasOwnProperty.call(property, "learn_more_url");
+
     return {
       ...property,
+      learn_more_url: hasLearnMoreUrl ? property.learn_more_url || "" : config.DEFAULT_PROPERTY_LINK,
       images: Array.isArray(property.images)
         ? property.images
         : String(property.images || "").split("\n").map((item) => item.trim()).filter(Boolean)

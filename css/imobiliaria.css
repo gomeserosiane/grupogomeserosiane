@@ -35,6 +35,12 @@
   gap: 22px;
 }
 
+.property-more-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 26px;
+}
+
 .property-card {
   overflow: hidden;
   border: 1px solid var(--line);

@@ -1,6 +1,7 @@
 ﻿// Renderiza a seção Imobiliária, com filtros, carrossel de fotos e expansão de imagem.
 const RealEstatePage = (() => {
   const listElement = document.getElementById("property-list");
+  const toggleMoreButton = document.getElementById("property-toggle-more");
   const filterButtons = [...document.querySelectorAll("[data-property-filter]")];
   const lightbox = document.getElementById("property-lightbox");
   const lightboxMedia = document.getElementById("property-lightbox-media");
@@ -10,6 +11,7 @@ const RealEstatePage = (() => {
   const lightboxDots = document.getElementById("property-lightbox-dots");
   let properties = [];
   let activeFilter = "todos";
+  let showAllProperties = false;
   let lightboxProperty = null;
   let lightboxIndex = 0;
   const activeImages = {};
@@ -81,6 +83,10 @@ const RealEstatePage = (() => {
   function createPropertyCard(property) {
     const activeIndex = activeImages[property.id] || 0;
     const media = property.images[activeIndex] || property.images[0];
+    const learnMoreUrl = String(property.learn_more_url || "").trim();
+    const learnMoreButton = learnMoreUrl
+      ? `<a class="button button-primary" href="${learnMoreUrl}" target="_blank" rel="noopener"><i data-lucide="info"></i> Saiba mais</a>`
+      : "";
     const article = document.createElement("article");
     article.className = "property-card";
     article.innerHTML = `
@@ -103,7 +109,7 @@ const RealEstatePage = (() => {
         <p><i data-lucide="navigation"></i> ${property.neighborhood}</p>
         <p><i data-lucide="building-2"></i> ${property.city}</p>
         <div class="property-actions">
-          <a class="button button-primary" href="${property.learn_more_url || window.APP_CONFIG.DEFAULT_PROPERTY_LINK}" target="_blank" rel="noopener"><i data-lucide="info"></i> Saiba mais</a>
+          ${learnMoreButton}
           <a class="button button-whatsapp" href="https://wa.me/5591981643641?text=${encodeURIComponent(`Olá, gostaria de saber mais sobre o imóvel: ${property.title}`)}" target="_blank" rel="noopener"><i data-lucide="message-circle"></i> Entre em contato</a>
         </div>
       </div>
@@ -114,14 +120,22 @@ const RealEstatePage = (() => {
   function renderProperties() {
     if (!listElement) return;
     const visibleProperties = filteredProperties();
+    const propertiesToRender = showAllProperties ? visibleProperties : visibleProperties.slice(0, 4);
     listElement.innerHTML = "";
 
     if (!visibleProperties.length) {
       listElement.innerHTML = '<div class="empty-properties">Nenhum imóvel encontrado para este filtro.</div>';
+      toggleMoreButton?.classList.add("hidden");
       return;
     }
 
-    visibleProperties.forEach((property) => listElement.appendChild(createPropertyCard(property)));
+    propertiesToRender.forEach((property) => listElement.appendChild(createPropertyCard(property)));
+
+    if (toggleMoreButton) {
+      toggleMoreButton.classList.toggle("hidden", visibleProperties.length <= 4);
+      toggleMoreButton.textContent = showAllProperties ? "Ver menos" : "Ver mais";
+    }
+
     lucide.createIcons();
   }
 
@@ -129,9 +143,19 @@ const RealEstatePage = (() => {
     filterButtons.forEach((button) => {
       button.addEventListener("click", () => {
         activeFilter = button.dataset.propertyFilter;
+        showAllProperties = false;
         filterButtons.forEach((item) => item.classList.toggle("active", item === button));
         renderProperties();
       });
+    });
+  }
+
+  function setupToggleMore() {
+    if (!toggleMoreButton) return;
+
+    toggleMoreButton.addEventListener("click", () => {
+      showAllProperties = !showAllProperties;
+      renderProperties();
     });
   }
 
@@ -173,6 +197,7 @@ const RealEstatePage = (() => {
     if (!listElement) return;
     properties = await PropertyStorage.listProperties();
     setupFilters();
+    setupToggleMore();
     setupCardActions();
     lightboxClose.addEventListener("click", closeLightbox);
     lightboxPrev.addEventListener("click", () => showLightboxImage("prev"));

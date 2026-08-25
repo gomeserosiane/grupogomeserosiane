@@ -175,7 +175,7 @@ const App = (() => {
       services: [5]
     },
     funeraria: {
-      logo: "images-logos/logo-funeraria.png",
+      logo: "images-logos/logo-funeraria1.png",
       alt: "Gomes Funerária",
       services: [4]
     }

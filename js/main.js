@@ -4,6 +4,7 @@ const App = (() => {
   const mainNav = document.querySelector("[data-main-nav]");
   const contactForm = document.getElementById("contact-form");
   const serviceCards = [...document.querySelectorAll("[data-service-card]")];
+  const serviceStage = document.querySelector("[data-service-slider] .service-stage");
   const servicePrev = document.querySelector("[data-service-prev]");
   const serviceNext = document.querySelector("[data-service-next]");
   const detailSection = document.getElementById("service-detail");
@@ -244,8 +245,45 @@ const App = (() => {
   function updateServiceArrows() {
     if (!servicePrev || !serviceNext) return;
 
-    servicePrev.classList.toggle("hidden", activeService === 0);
-    serviceNext.classList.toggle("hidden", activeService === serviceCards.length - 1);
+    const isFirstService = activeService === 0;
+    const isLastService = activeService === serviceCards.length - 1;
+
+    servicePrev.classList.toggle("hidden", isFirstService);
+    serviceNext.classList.toggle("hidden", isLastService);
+    servicePrev.disabled = isFirstService;
+    serviceNext.disabled = isLastService;
+  }
+
+  // Permite navegar pelos cards com um gesto horizontal em telas de toque.
+  function setupSwipeNavigation(element, showPrevious, showNext) {
+    if (!element) return;
+
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    element.addEventListener("touchstart", (event) => {
+      if (event.touches.length !== 1) return;
+
+      touchStartX = event.touches[0].clientX;
+      touchStartY = event.touches[0].clientY;
+    }, { passive: true });
+
+    element.addEventListener("touchend", (event) => {
+      const touch = event.changedTouches[0];
+      if (!touch) return;
+
+      const distanceX = touch.clientX - touchStartX;
+      const distanceY = touch.clientY - touchStartY;
+      const isHorizontalSwipe = Math.abs(distanceX) >= 50 && Math.abs(distanceX) > Math.abs(distanceY) * 1.2;
+
+      if (!isHorizontalSwipe) return;
+
+      if (distanceX < 0) {
+        showNext();
+      } else {
+        showPrevious();
+      }
+    }, { passive: true });
   }
 
   function showService(index) {
@@ -356,6 +394,11 @@ const App = (() => {
 
     servicePrev.addEventListener("click", () => showService(activeService - 1));
     serviceNext.addEventListener("click", () => showService(activeService + 1));
+    setupSwipeNavigation(
+      serviceStage,
+      () => showService(activeService - 1),
+      () => showService(activeService + 1)
+    );
 
     document.querySelectorAll("[data-service-detail]").forEach((button) => {
       button.addEventListener("click", () => {

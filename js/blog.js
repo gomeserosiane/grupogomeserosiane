@@ -79,8 +79,44 @@ const BlogPage = (() => {
   function updateArrows() {
     if (!prevButton || !nextButton) return;
 
-    prevButton.classList.toggle("hidden", activeIndex === 0 || posts.length <= 1);
-    nextButton.classList.toggle("hidden", activeIndex === posts.length - 1 || posts.length <= 1);
+    const isFirstPost = activeIndex === 0 || posts.length <= 1;
+    const isLastPost = activeIndex === posts.length - 1 || posts.length <= 1;
+
+    prevButton.classList.toggle("hidden", isFirstPost);
+    nextButton.classList.toggle("hidden", isLastPost);
+    prevButton.disabled = isFirstPost;
+    nextButton.disabled = isLastPost;
+  }
+
+  // Permite navegar pelas publicações com um gesto horizontal em telas de toque.
+  function setupSwipeNavigation() {
+    if (!postsContainer) return;
+
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    postsContainer.addEventListener("touchstart", (event) => {
+      if (event.touches.length !== 1) return;
+
+      touchStartX = event.touches[0].clientX;
+      touchStartY = event.touches[0].clientY;
+    }, { passive: true });
+
+    postsContainer.addEventListener("touchend", (event) => {
+      const touch = event.changedTouches[0];
+      if (!touch) return;
+
+      const distanceX = touch.clientX - touchStartX;
+      const distanceY = touch.clientY - touchStartY;
+      const isHorizontalSwipe = Math.abs(distanceX) >= 50 && Math.abs(distanceX) > Math.abs(distanceY) * 1.2;
+
+      if (!isHorizontalSwipe) return;
+
+      activeIndex = distanceX < 0
+        ? Math.min(activeIndex + 1, posts.length - 1)
+        : Math.max(activeIndex - 1, 0);
+      renderActivePost();
+    }, { passive: true });
   }
 
   function renderActivePost() {
@@ -124,6 +160,8 @@ const BlogPage = (() => {
         renderActivePost();
       });
     }
+
+    setupSwipeNavigation();
   }
 
   setupControls();

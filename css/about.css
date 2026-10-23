@@ -6,8 +6,8 @@
 .about-grid {
   display: grid;
   align-items: center;
-  grid-template-columns: 1fr 0.84fr;
-  gap: 56px;
+  grid-template-columns: 1.12fr 0.72fr;
+  gap: 46px;
 }
 
 .leadership-grid {
@@ -80,7 +80,7 @@
 .leader-card p {
   margin: 0;
   color: rgba(255, 255, 255, 0.9);
-  font-size: 0.86rem;
+  font-size: 0.84rem;
   line-height: 1.55;
 }
 

@@ -402,6 +402,44 @@
             alt="Village Natureza">
         </h2>
 
+        <div class="village-gallery" aria-label="Galeria de imagens do Village Natureza">
+          <div class="village-gallery-heading">
+            <div>
+              <span>Conheça cada detalhe</span>
+              <h3>Explore o Village Natureza</h3>
+            </div>
+          </div>
+
+          <div class="village-carousel" data-village-carousel>
+            <div class="village-carousel-track" data-village-track>
+              <div class="village-carousel-set" data-village-set>
+                <button type="button" data-village-image="0"><img src="assets/village-natureza/gallery/img1.jpg" alt="Entrada do Village Natureza" loading="lazy"></button>
+                <button type="button" data-village-image="1"><img src="assets/village-natureza/gallery/img2.jpg" alt="Vista dos edifícios do Village Natureza" loading="lazy"></button>
+                <button type="button" data-village-image="2"><img src="assets/village-natureza/gallery/img3.jpg" alt="Piscinas do Village Natureza" loading="lazy"></button>
+                <button type="button" data-village-image="3"><img src="assets/village-natureza/gallery/img4.jpg" alt="Salão de festas com churrasqueira" loading="lazy"></button>
+                <button type="button" data-village-image="4"><img src="assets/village-natureza/gallery/img5.jpg" alt="Campo gramado" loading="lazy"></button>
+                <button type="button" data-village-image="5"><img src="assets/village-natureza/gallery/img6.jpg" alt="Academia" loading="lazy"></button>
+                <button type="button" data-village-image="6"><img src="assets/village-natureza/gallery/img7.jpg" alt="Espaço de coworking" loading="lazy"></button>
+                <button type="button" data-village-image="7"><img src="assets/village-natureza/gallery/img8.jpg" alt="Brinquedoteca" loading="lazy"></button>
+                <button type="button" data-village-image="8"><img src="assets/village-natureza/gallery/img9.jpg" alt="Playground" loading="lazy"></button>
+                <button type="button" data-village-image="9"><img src="assets/village-natureza/gallery/img10.jpg" alt="Pet place" loading="lazy"></button>
+                <button type="button" data-village-image="10"><img src="assets/village-natureza/gallery/img11.jpg" alt="Espaço verde do condomínio" loading="lazy"></button>
+                <button type="button" data-village-image="11"><img src="assets/village-natureza/gallery/img12.jpg" alt="Praça de piquenique" loading="lazy"></button>
+                <button type="button" data-village-image="12"><img src="assets/village-natureza/gallery/img13.jpg" alt="Sauna e spa" loading="lazy"></button>
+                <button type="button" data-village-image="13"><img src="assets/village-natureza/gallery/img14.jpg" alt="Redário" loading="lazy"></button>
+                <button type="button" data-village-image="14"><img src="assets/village-natureza/gallery/img15.jpg" alt="Bicicletário e praças" loading="lazy"></button>
+                <button type="button" data-village-image="15"><img src="assets/village-natureza/gallery/img16.jpg" alt="Espaço funcional" loading="lazy"></button>
+                <button type="button" data-village-image="16"><img src="assets/village-natureza/gallery/img17.jpg" alt="Sala de estar e jantar do apartamento tipo A" loading="lazy"></button>
+                <button type="button" data-village-image="17"><img src="assets/village-natureza/gallery/img18.jpg" alt="Quarto do apartamento tipo A" loading="lazy"></button>
+                <button type="button" data-village-image="18"><img src="assets/village-natureza/gallery/img19.jpg" alt="Segundo quarto do apartamento tipo A" loading="lazy"></button>
+                <button type="button" data-village-image="19"><img src="assets/village-natureza/gallery/img20.jpg" alt="Sala de estar e jantar do apartamento tipo B" loading="lazy"></button>
+                <button type="button" data-village-image="20"><img src="assets/village-natureza/gallery/img21.jpg" alt="Quarto do apartamento tipo B" loading="lazy"></button>
+                <button type="button" data-village-image="21"><img src="assets/village-natureza/gallery/img22.jpg" alt="Segundo quarto do apartamento tipo B" loading="lazy"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="village-cta">
           <p>Descubra um lugar pensado para viver com tranquilidade, conforto e conexão com a natureza.</p>
           <a class="button village-book-button" href="assets/village-natureza/book-village-natureza.pdf"
@@ -439,6 +477,30 @@
           target="_blank" rel="noopener">
           Acesse todo o conteúdo do Village Natureza <i data-lucide="arrow-up-right"></i>
         </a>
+      </div>
+
+      <div class="village-lightbox" data-village-lightbox aria-hidden="true">
+        <div class="village-lightbox-dialog" role="dialog" aria-modal="true" aria-label="Galeria ampliada do Village Natureza">
+          <div class="village-lightbox-topbar">
+            <p><span data-village-current>1</span> / 22</p>
+            <div class="village-lightbox-tools" aria-label="Controles da imagem">
+              <button type="button" data-village-zoom-out aria-label="Diminuir zoom"><i data-lucide="zoom-out"></i></button>
+              <button type="button" data-village-zoom-reset aria-label="Restaurar zoom"><span data-village-zoom-level>100%</span></button>
+              <button type="button" data-village-zoom-in aria-label="Aumentar zoom"><i data-lucide="zoom-in"></i></button>
+              <button type="button" data-village-close aria-label="Fechar galeria"><i data-lucide="x"></i></button>
+            </div>
+          </div>
+
+          <div class="village-lightbox-stage" data-village-stage>
+            <button class="village-lightbox-arrow village-lightbox-prev" type="button" data-village-prev aria-label="Imagem anterior"><i data-lucide="chevron-left"></i></button>
+            <div class="village-lightbox-viewport" data-village-viewport>
+              <img data-village-expanded src="assets/village-natureza/gallery/img1.jpg" alt="Entrada do Village Natureza" draggable="false">
+            </div>
+            <button class="village-lightbox-arrow village-lightbox-next" type="button" data-village-next aria-label="Próxima imagem"><i data-lucide="chevron-right"></i></button>
+          </div>
+
+          <div class="village-lightbox-thumbs" data-village-thumbs aria-label="Escolher outra imagem"></div>
+        </div>
       </div>
     </section>
 
@@ -623,6 +685,7 @@
   <script src="js/storage.js"></script>
   <script src="js/imobiliaria.js"></script>
   <script src="js/blog.js"></script>
+  <script src="js/village-gallery.js"></script>
   <script src="js/main.js"></script>
 </body>
 

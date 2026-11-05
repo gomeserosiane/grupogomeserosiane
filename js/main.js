@@ -114,7 +114,10 @@ const App = (() => {
       benefits: "Mais segurança na escolha dos produtos, orientação personalizada, variedade de soluções e atendimento voltado para o uso real do cliente no trabalho, estudo e lazer.",
       items: ["Clientes que precisam de óculos de grau", "Pessoas que buscam óculos de sol ou lentes de contato", "Quem deseja orientação para escolher armações adequadas"],
       images: [
-        "images-slider/slider-otica.png"
+        "images-slider/slider-otica.png",
+        "images-slider/slider-otica1.png",
+        "images-slider/slider-otica2.png",
+        "images-slider/slider-otica3.png"
       ]
     },
     {
